@@ -1,0 +1,57 @@
+/*
+* Constructor PoongGUI
+*/
+
+/*
+* Prepara elementos de la pantalla
+*/
+
+/*
+* Prepara elementos de la pantalla menu 
+*@param width int ancho de la pantalla
+*@param height int alto de la pantalla
+*/
+
+/*
+* Prepara acciones de la pantalla 
+*/
+
+/*
+* Paramsalir de la pantalla correctamente
+*/
+
+/*
+* Corre el programa
+*/
+
+/*
+* Constructor ModoGameGUI
+*/
+
+/*
+* Constructor PersonajeGUI
+*/
+
+/*
+* Constructor ConfiGUI
+*/
+
+/*
+* Constructor JuegoGUI
+*/
+
+/*
+* Carga el persanaje seleccionado para el jugador 1
+* @param per String PersonajeGUI
+* @return String personaje seleccionado
+*/
+
+/*
+* Carga el persanaje seleccionado para el jugador 2
+* @param per String PersonajeGUI
+* @return String personaje seleccionado
+*/
+
+/*
+* Refreseca la pantalla
+*/

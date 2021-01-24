@@ -1,0 +1,7 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/Users/hogar/Desktop/Nikolás ECI 201/POOB/lab06/JUnitTest/hamcrest-core-1.3.jar",
+        "/Users/hogar/Desktop/Nikolás ECI 201/POOB/lab06/JUnitTest/junit-4.13.jar"
+    ]
+}

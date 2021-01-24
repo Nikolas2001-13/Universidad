@@ -1,0 +1,49 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ConfiGUI<POONG_bd253fb9>",
+            "request": "launch",
+            "mainClass": "presentacion.ConfiGUI",
+            "projectName": "POONG_bd253fb9"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JuegoGUI<POONG_bd253fb9>",
+            "request": "launch",
+            "mainClass": "presentacion.JuegoGUI",
+            "projectName": "POONG_bd253fb9"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ModoGameGUI<POONG_bd253fb9>",
+            "request": "launch",
+            "mainClass": "presentacion.ModoGameGUI",
+            "projectName": "POONG_bd253fb9"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PersonajeGUI<POONG_bd253fb9>",
+            "request": "launch",
+            "mainClass": "presentacion.PersonajeGUI",
+            "projectName": "POONG_bd253fb9"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PoongGUI<POONG_bd253fb9>",
+            "request": "launch",
+            "mainClass": "presentacion.PoongGUI",
+            "projectName": "POONG_bd253fb9"
+        }
+    ]
+}

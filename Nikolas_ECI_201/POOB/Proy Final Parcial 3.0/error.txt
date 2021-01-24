@@ -1,0 +1,53 @@
+ public JuegoGUI(String modo, String ju1, String ju2, String punt, String ball) {
+        super("Poong");
+        this.modo = modo;
+        j1 = ju1;
+        j2 = ju2;
+        bal = ball;
+        pause = false;
+        puntaje = Integer.parseInt(punt);
+        tablero = new Tablero((height / 2), (width / 2), j1, j2, puntaje);
+        tablero.setBounds(150, 150, (width / 2) - 100, (height / 2) - 100);
+        add(tablero);
+        prepareElementos();
+        prepareAcciones();
+    }
+    public JuegoGUI(Poong pongo) {
+        super("Poong");
+        tablero = new Tablero((height / 2), (width / 2), j1, j2, puntaje);
+        tablero.setBounds(190, 190, (width / 2) - 100, (height / 2) - 100);
+        add(tablero);
+        prepareElementos();
+        prepareAcciones();
+    }
+
+    public void prepareElementos() {
+        screen = Toolkit.getDefaultToolkit().getScreenSize();
+        width = (int) screen.getWidth();
+        height = (int) screen.getHeight();
+        setSize((width / 2) + 200, (height / 2) + 200);
+        salvar = new JButton("Guardar y Salir");
+        salvar.setBounds(0, 100, 200, 30);
+        add(salvar);
+        pausar = new JButton("Pausa");
+        pausar.setBounds(0, 215, 95, 30);
+        add(pausar);
+        getContentPane().setBackground(Color.WHITE);
+        setLayout(null);
+
+        
+
+        borde = new JPanel();
+        borde.setBackground(Color.BLACK);
+        borde.setBounds(170, 170, (width / 2) - 60, (height / 2) - 60);
+        add(borde);
+
+        input = tablero.p1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
+        ap = tablero.p1.getActionMap();
+        input.put(KeyStroke.getKeyStroke(KeyEvent.VK_W, 0, false), "up");
+        input.put(KeyStroke.getKeyStroke(KeyEvent.VK_S, 0, false), "d");
+        input2 = tablero.p1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
+        ap2 = tablero.p1.getActionMap();
+        input2.put(KeyStroke.getKeyStroke(KeyEvent.VK_UP, 0, false), "ar");
+        input2.put(KeyStroke.getKeyStroke(KeyEvent.VK_DOWN, 0, false), "ab");
+    }

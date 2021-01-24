@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"aplicacion","l":"AutomataCelular"},{"p":"aplicacion","l":"Barrera"},{"p":"aplicacion","l":"BarreraAleatoria"},{"p":"aplicacion","l":"Cancerigena"},{"p":"aplicacion","l":"Celula"},{"p":"aplicacion","l":"Conway"},{"p":"aplicacion","l":"Elemento"},{"p":"aplicacion","l":"Izquierdosa"}]
