@@ -1,0 +1,89 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 #include <stdio.h>\
+#include <string.h>\
+\
+void resta(char n1[1000], char n2[1000], int len1, int len2, int c1,int c2)\{\
+	int indice1=len1,indice2=len2,mx=999,f=0,rr,count;\
+	char res[1000];\
+	for (count=len2;count>=c2;count--)\{\
+	    rr=(n1[indice1]-48)-(n2[indice2]-48);\
+	    rr-=f;\
+	    f=0;\
+		if (rr<0)\{\
+			rr+=10;\
+			f=1;\
+		\}	\
+		res[mx]=rr+48;\
+		indice1--;\
+		mx--;\
+	\}\
+	while (c1<=indice1)\{\
+		rr=(n1[indice1]-48);\
+		rr-=f;\
+		f=0;\
+		if (rr<0)\{\
+		    rr+=10;\
+		    f=1;\
+		\}\
+		res[mx]=rr+48;\
+		indice1--;\
+		mx--;\
+	\}\
+	mx+=1;\
+	while (mx<1000&&res[mx]=='0')\{\
+		mx+=1;\
+	\}\
+	for (indice1=mx;indice1<1000;indice1++)\{\
+		printf("%c",res[indice1]);\
+	\}\
+	if (res[999]=='0'&&mx==1000)\{\
+		printf("0");\
+	\}\
+	\
+\
+\}\
+int main(void)\{\
+	int casos,c1,c2,a,b,j,len1,len2;\
+	char n1[1000],n2[1000];\
+	scanf("%d",&casos);\
+	while (casos>0)\{\
+	    c1=0;\
+	    c2=0;\
+	    a=0;\
+	    b=0;\
+	    scanf("%s",&n1);\
+	    scanf("%s",&n2);\
+	    len1=strlen(n1);\
+	    len2=strlen(n2);\
+	    while (a<len1&&n1[a]=='0')\{\
+	        c1+=1;\
+	        a+=1;\
+	    \}\
+	    while (b<len2&&n2[b]=='0')\{\
+	        c2+=1;\
+	        b+=1;\
+	    \}\
+		if (c2==len2)\{\
+			if (c1!=len1)\{\
+				for (j=c1;j<len1;j++)\{\
+				    printf("%c",n1[j]);\
+				\}\
+			\}\
+			else\{\
+			    printf("0");\
+			\}\
+			\
+		\}\
+		else\{\
+			resta(n1,n2,len1-1,len2-1,c1,c2);\
+			printf("\\n");\
+		\}\
+		casos-=1;\
+	\}\
+\}}

@@ -1,0 +1,21 @@
+CHIP quiz{
+	IN A,B,C;
+	OUT Y,Z;
+	
+	PARTS:
+	Not (in=B,out=notB);
+	And (a=notB,b=C,out=notBAndC);
+	And (a=A,b=B,out=AAndB);
+	Or (a=notBAndC,b=AAndB,out=Y);
+	
+	Not (in=A,out=notA);
+	Not (in=C,out=notC);
+	And (a=notA,b=C,out=notAAndC);
+	And (a=notA,b=B,out=notAAndB);
+	And (a=B,b=C,out=BandC);
+	And (a=A,b=notB,out=AAndnotB);
+	And (a=AAndnotB,b=notC,out=AAndnotBAndnotC);
+	Or (a=notAAndC,b=notAAndB,out=notAAndCORnotAAndB);
+	Or (a=BandC,b=AAndnotBAndnotC,out=BandCORAAndnotBAndnotC);
+	Or (a=notAAndCORnotAAndB,b=BandCORAAndnotBAndnotC,out=Z);
+}

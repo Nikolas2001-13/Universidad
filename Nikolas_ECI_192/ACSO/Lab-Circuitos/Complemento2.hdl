@@ -1,0 +1,117 @@
+CHIP Complemento2 {
+
+IN ah[16], al[16];
+OUT sh[16], sl[16];
+
+PARTS:
+
+//Tautologia, para que el carry empiece desde 1.
+Not(in = ah[0], out = NotAh);
+Or(a = ah[0], b = NotAh, out = true);
+
+//Se hace el complemento a 1 de ambas cadenas ah y al, negando todos los bits.
+Not(in = ah[15], out = b31);
+Not(in = ah[14], out = b30);
+Not(in = ah[13], out = b29);
+Not(in = ah[12], out = b28);
+Not(in = ah[11], out = b27);
+Not(in = ah[10], out = b26);
+Not(in = ah[9], out = b25);
+Not(in = ah[8], out = b24);
+Not(in = ah[7], out = b23);
+Not(in = ah[6], out = b22);
+Not(in = ah[5], out = b21);
+Not(in = ah[4], out = b20);
+Not(in = ah[3], out = b19);
+Not(in = ah[2], out = b18);
+Not(in = ah[1], out = b17);
+Not(in = ah[0], out = b16);
+
+Not(in = al[15], out = b15);
+Not(in = al[14], out = b14);
+Not(in = al[13], out = b13);
+Not(in = al[12], out = b12);
+Not(in = al[11], out = b11);
+Not(in = al[10], out = b10);
+Not(in = al[9], out = b9);
+Not(in = al[8], out = b8);
+Not(in = al[7], out = b7);
+Not(in = al[6], out = b6);
+Not(in = al[5], out = b5);
+Not(in = al[4], out = b4);
+Not(in = al[3], out = b3);
+Not(in = al[2], out = b2);
+Not(in = al[1], out = b1);
+Not(in = al[0], out = b0);
+
+//Se calculan los carrys de las cadenas con AND's, ya que solo habra carry si ambos bits son 1.
+And(a=b0,b=true,out=c0);
+And(a=b1,b=c0,out=c1);
+And(a=b2,b=c1,out=c2);
+And(a=b3,b=c2,out=c3);
+And(a=b4,b=c3,out=c4);
+And(a=b5,b=c4,out=c5);
+And(a=b6,b=c5,out=c6);
+And(a=b7,b=c6,out=c7);
+And(a=b8,b=c7,out=c8);
+And(a=b9,b=c8,out=c9);
+And(a=b10,b=c9,out=c10);
+And(a=b11,b=c10,out=c11);
+And(a=b12,b=c11,out=c12);
+And(a=b13,b=c12,out=c13);
+And(a=b14,b=c13,out=c14);
+And(a=b15,b=c14,out=c15);
+
+And(a=b16,b=c15,out=c16);
+And(a=b17,b=c16,out=c17);
+And(a=b18,b=c17,out=c18);
+And(a=b19,b=c18,out=c19);
+And(a=b20,b=c19,out=c20);
+And(a=b21,b=c20,out=c21);
+And(a=b22,b=c21,out=c22);
+And(a=b23,b=c22,out=c23);
+And(a=b24,b=c23,out=c24);
+And(a=b25,b=c24,out=c25);
+And(a=b26,b=c25,out=c26);
+And(a=b27,b=c26,out=c27);
+And(a=b28,b=c27,out=c28);
+And(a=b29,b=c28,out=c29);
+And(a=b30,b=c29,out=c30);
+And(a=b31,b=c30,out=c31);
+
+//Se calcula la suma de los bits con Xor's, ya que para que sume los bits y que no haya carry deben ser diferentes.
+Xor(a=b0,b=true,out=sl[0]);
+Xor(a=b1,b=c0,out=sl[1]);
+Xor(a=b2,b=c1,out=sl[2]);
+Xor(a=b3,b=c2,out=sl[3]);
+Xor(a=b4,b=c3,out=sl[4]);
+Xor(a=b5,b=c4,out=sl[5]);
+Xor(a=b6,b=c5,out=sl[6]);
+Xor(a=b7,b=c6,out=sl[7]);
+Xor(a=b8,b=c7,out=sl[8]);
+Xor(a=b9,b=c8,out=sl[9]);
+Xor(a=b10,b=c9,out=sl[10]);
+Xor(a=b11,b=c10,out=sl[11]);
+Xor(a=b12,b=c11,out=sl[12]);
+Xor(a=b13,b=c12,out=sl[13]);
+Xor(a=b14,b=c13,out=sl[14]);
+Xor(a=b15,b=c14,out=sl[15]);
+
+Xor(a=b16,b=c15,out=sh[0]);
+Xor(a=b17,b=c16,out=sh[1]);
+Xor(a=b18,b=c17,out=sh[2]);
+Xor(a=b19,b=c18,out=sh[3]);
+Xor(a=b20,b=c19,out=sh[4]);
+Xor(a=b21,b=c20,out=sh[5]);
+Xor(a=b22,b=c21,out=sh[6]);
+Xor(a=b23,b=c22,out=sh[7]);
+Xor(a=b24,b=c23,out=sh[8]);
+Xor(a=b25,b=c24,out=sh[9]);
+Xor(a=b26,b=c25,out=sh[10]);
+Xor(a=b27,b=c26,out=sh[11]);
+Xor(a=b28,b=c27,out=sh[12]);
+Xor(a=b29,b=c28,out=sh[13]);
+Xor(a=b30,b=c29,out=sh[14]);
+Xor(a=b31,b=c30,out=sh[15]);
+
+}

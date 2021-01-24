@@ -1,0 +1,17 @@
+CHIP quiz4{
+IN X,Y,Z;
+OUT S;
+
+PARTS:
+Or (a=X, b=Y, out=XorY);
+Or (a=XorY, b=Z, out=XorYorZ);
+
+Not (in=X, out=notX);
+Not (in=Y, out=notY);
+Not (in=Z, out=notZ);
+
+Or (a=notX, b=notY, out=notXornotY);
+Or (a=notXornotY, b=notZ, out=notXornotYornotZ);
+
+And(a=XorYorZ, b=notXornotYornotZ, out=S);
+}

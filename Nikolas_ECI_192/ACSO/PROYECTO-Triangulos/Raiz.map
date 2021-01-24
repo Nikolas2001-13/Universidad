@@ -1,0 +1,23 @@
+ ------------------------
+ Symbol        | Location
+ --------------+---------
+ avg           |   042
+ avg_x         |   04B
+ babil         |   009
+ div           |   026
+ div_i         |   041
+ div_lado1     |   024
+ div_lado2     |   025
+ div_x         |   03D
+ div_y         |   03E
+ dos           |   040
+ endwhile      |   033
+ endwhile_raiz |   022
+ par           |   039
+ raiz          |   007
+ res_avg       |   04C
+ res_raiz      |   008
+ uno           |   03F
+ while         |   02A
+ while_raiz    |   012
+

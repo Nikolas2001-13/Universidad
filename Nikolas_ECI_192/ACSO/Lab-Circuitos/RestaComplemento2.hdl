@@ -1,0 +1,153 @@
+CHIP RestaComplemento2{
+
+	IN ah[16], al[16], bh[16], bl[16];
+	OUT sh[16], sl[16];	
+	
+	PARTS:
+	
+	//Se realiza el complemento a 1 de el segundo operando bh y bl, negando cada bit.
+	
+	Not (in=bl[0], out=b0);
+	Not (in=bl[1], out=b1);
+	Not (in=bl[2], out=b2);
+	Not (in=bl[3], out=b3);
+	Not (in=bl[4], out=b4);
+	Not (in=bl[5], out=b5);
+	Not (in=bl[6], out=b6);
+	Not (in=bl[7], out=b7);
+	Not (in=bl[8], out=b8);
+	Not (in=bl[9], out=b9);
+	Not (in=bl[10], out=b10);
+	Not (in=bl[11], out=b11);
+	Not (in=bl[12], out=b12);
+	Not (in=bl[13], out=b13);
+	Not (in=bl[14], out=b14);
+	Not (in=bl[15], out=b15);
+	
+	Not (in=bh[0], out=b16);
+	Not (in=bh[1], out=b17);
+	Not (in=bh[2], out=b18);
+	Not (in=bh[3], out=b19);
+	Not (in=bh[4], out=b20);
+	Not (in=bh[5], out=b21);
+	Not (in=bh[6], out=b22);
+	Not (in=bh[7], out=b23);
+	Not (in=bh[8], out=b24);
+	Not (in=bh[9], out=b25);
+	Not (in=bh[10], out=b26);
+	Not (in=bh[11], out=b27);
+	Not (in=bh[12], out=b28);
+	Not (in=bh[13], out=b29);
+	Not (in=bh[14], out=b30);
+	Not (in=bh[15], out=b31);
+	
+	//Se realiza la suma con el primer operando ah y al, guardando la respuesta en sh y sl.
+	
+	And (a=al[0],b=b0,out=carry0);
+	Xor (a=al[0],b=b0,out=sl0);
+
+	FullAdder (a=al[1], b=b1, c=carry0, sum=sl1, carry=carry1);
+	FullAdder (a=al[2], b=b2, c=carry1, sum=sl2, carry=carry2);
+	FullAdder (a=al[3], b=b3, c=carry2, sum=sl3, carry=carry3);
+	FullAdder (a=al[4], b=b4, c=carry3, sum=sl4, carry=carry4);
+	FullAdder (a=al[5], b=b5, c=carry4, sum=sl5, carry=carry5);
+	FullAdder (a=al[6], b=b6, c=carry5, sum=sl6, carry=carry6);
+	FullAdder (a=al[7], b=b7, c=carry6, sum=sl7, carry=carry7);
+	FullAdder (a=al[8], b=b8, c=carry7, sum=sl8, carry=carry8);
+	FullAdder (a=al[9], b=b9, c=carry8, sum=sl9, carry=carry9);
+	FullAdder (a=al[10], b=b10, c=carry9, sum=sl10, carry=carry10);
+	FullAdder (a=al[11], b=b11, c=carry10, sum=sl11, carry=carry11);
+	FullAdder (a=al[12], b=b12, c=carry11, sum=sl12, carry=carry12);
+	FullAdder (a=al[13], b=b13, c=carry12, sum=sl13, carry=carry13);
+	FullAdder (a=al[14], b=b14, c=carry13, sum=sl14, carry=carry14);
+	FullAdder (a=al[15], b=b15, c=carry14, sum=sl15, carry=carry15);
+	
+	FullAdder (a=ah[0], b=b16, c=carry15, sum=sh0, carry=carry16);
+	FullAdder (a=ah[1], b=b17, c=carry16, sum=sh1, carry=carry17);
+	FullAdder (a=ah[2], b=b18, c=carry17, sum=sh2, carry=carry18);
+	FullAdder (a=ah[3], b=b19, c=carry18, sum=sh3, carry=carry19);
+	FullAdder (a=ah[4], b=b20, c=carry19, sum=sh4, carry=carry20);
+	FullAdder (a=ah[5], b=b21, c=carry20, sum=sh5, carry=carry21);
+	FullAdder (a=ah[6], b=b22, c=carry21, sum=sh6, carry=carry22);
+	FullAdder (a=ah[7], b=b23, c=carry22, sum=sh7, carry=carry23);
+	FullAdder (a=ah[8], b=b24, c=carry23, sum=sh8, carry=carry24);
+	FullAdder (a=ah[9], b=b25, c=carry24, sum=sh9, carry=carry25);
+	FullAdder (a=ah[10], b=b26, c=carry25, sum=sh10, carry=carry26);
+	FullAdder (a=ah[11], b=b27, c=carry26, sum=sh11, carry=carry27);
+	FullAdder (a=ah[12], b=b28, c=carry27, sum=sh12, carry=carry28);
+	FullAdder (a=ah[13], b=b29, c=carry28, sum=sh13, carry=carry29);
+	FullAdder (a=ah[14], b=b30, c=carry29, sum=sh14, carry=carry30);
+	FullAdder (a=ah[15], b=b31, c=carry30, sum=sh15, carry=carry31);
+	
+	//Se suma 1 a sl, para completar el complemento a dos del principio.
+	
+	And (a=sl0,b=true,out=c0);
+	And (a=sl1,b=c0,out=c1);
+	And (a=sl2,b=c1,out=c2);
+	And (a=sl3,b=c2,out=c3);
+	And (a=sl4,b=c3,out=c4);
+	And (a=sl5,b=c4,out=c5);
+	And (a=sl6,b=c5,out=c6);
+	And (a=sl7,b=c6,out=c7);
+	And (a=sl8,b=c7,out=c8);
+	And (a=sl9,b=c8,out=c9);
+	And (a=sl10,b=c9,out=c10);
+	And (a=sl11,b=c10,out=c11);
+	And (a=sl12,b=c11,out=c12);
+	And (a=sl13,b=c12,out=c13);
+	And (a=sl14,b=c13,out=c14);
+	And (a=sl15,b=c14,out=c15);
+
+	And (a=sh0,b=c15,out=c16);
+	And (a=sh1,b=c16,out=c17);
+	And (a=sh2,b=c17,out=c18);
+	And (a=sh3,b=c18,out=c19);
+	And (a=sh4,b=c19,out=c20);
+	And (a=sh5,b=c20,out=c21);
+	And (a=sh6,b=c21,out=c22);
+	And (a=sh7,b=c22,out=c23);
+	And (a=sh8,b=c23,out=c24);
+	And (a=sh9,b=c24,out=c25);
+	And (a=sh10,b=c25,out=c26);
+	And (a=sh11,b=c26,out=c27);
+	And (a=sh12,b=c27,out=c28);
+	And (a=sh13,b=c28,out=c29);
+	And (a=sh14,b=c29,out=c30);
+	And (a=sh15,b=c30,out=c31);
+
+	Xor (a=sl0,b=true,out=sl[0]);
+	Xor (a=sl1,b=c0,out=sl[1]);
+	Xor (a=sl2,b=c1,out=sl[2]);
+	Xor (a=sl3,b=c2,out=sl[3]);
+	Xor (a=sl4,b=c3,out=sl[4]);
+	Xor (a=sl5,b=c4,out=sl[5]);
+	Xor (a=sl6,b=c5,out=sl[6]);
+	Xor (a=sl7,b=c6,out=sl[7]);
+	Xor (a=sl8,b=c7,out=sl[8]);
+	Xor (a=sl9,b=c8,out=sl[9]);
+	Xor (a=sl10,b=c9,out=sl[10]);
+	Xor (a=sl11,b=c10,out=sl[11]);
+	Xor (a=sl12,b=c11,out=sl[12]);
+	Xor (a=sl13,b=c12,out=sl[13]);
+	Xor (a=sl14,b=c13,out=sl[14]);
+	Xor (a=sl15,b=c14,out=sl[15]);
+
+	Xor (a=sh0,b=c15,out=sh[0]);
+	Xor (a=sh1,b=c16,out=sh[1]);
+	Xor (a=sh2,b=c17,out=sh[2]);
+	Xor (a=sh3,b=c18,out=sh[3]);
+	Xor (a=sh4,b=c19,out=sh[4]);
+	Xor (a=sh5,b=c20,out=sh[5]);
+	Xor (a=sh6,b=c21,out=sh[6]);
+	Xor (a=sh7,b=c22,out=sh[7]);
+	Xor (a=sh8,b=c23,out=sh[8]);
+	Xor (a=sh9,b=c24,out=sh[9]);
+	Xor (a=sh10,b=c25,out=sh[10]);
+	Xor (a=sh11,b=c26,out=sh[11]);
+	Xor (a=sh12,b=c27,out=sh[12]);
+	Xor (a=sh13,b=c28,out=sh[13]);
+	Xor (a=sh14,b=c29,out=sh[14]);
+	Xor (a=sh15,b=c30,out=sh[15]);
+	
+
+}

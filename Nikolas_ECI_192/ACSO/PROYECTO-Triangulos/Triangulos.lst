@@ -1,0 +1,491 @@
+     Assembly listing for: Triangulos.mas
+                Assembled: Sat Nov 30 15:19:25 COT 2019
+
+000 5000 |                    INPUT                        
+001 20DE |                    STORE x1                     
+002 5000 |                    INPUT                        
+003 20DF |                    STORE y1                     
+004 5000 |                    INPUT                        
+005 20E0 |                    STORE x2                     
+006 5000 |                    INPUT                        
+007 20E1 |                    STORE y2                     
+008 5000 |                    INPUT                        
+009 20E2 |                    STORE x3                     
+00A 5000 |                    INPUT                        
+00B 20E3 |                    STORE y3                     
+         |                                                
+00C 10DE |                    LOAD x1                      
+00D 40E0 |                    SUBT x2                      
+00E 20E4 |                    STORE d1                     
+00F 10E4 |                    LOAD d1                      
+010 20F0 |                    STORE k                      
+011 0116 |                    JNS posi                     
+012 20EA |                    STORE d1+                    
+013 10DF |                    LOAD y1                      
+014 40E1 |                    SUBT y2                      
+015 20E5 |                    STORE d2                     
+016 10E5 |                    LOAD d2                      
+017 20F0 |                    STORE k                      
+018 0116 |                    JNS posi                     
+019 20EB |                    STORE d2+                    
+         |                                                
+01A 10DE |                    LOAD x1                      
+01B 40E2 |                    SUBT x3                      
+01C 20E6 |                    STORE d3                     
+01D 10E6 |                    LOAD d3                      
+01E 20F0 |                    STORE k                      
+01F 0116 |                    JNS posi                     
+020 20EC |                    STORE d3+                    
+021 10DF |                    LOAD y1                      
+022 40E3 |                    SUBT y3                      
+023 20E7 |                    STORE d4                     
+024 10E7 |                    LOAD d4                      
+025 20F0 |                    STORE k                      
+026 0116 |                    JNS posi                     
+027 20ED |                    STORE d4+                    
+         |                                                
+028 10E0 |                    LOAD x2                      
+029 40E2 |                    SUBT x3                      
+02A 20E8 |                    STORE d5                     
+02B 10E8 |                    LOAD d5                      
+02C 20F0 |                    STORE k                      
+02D 0116 |                    JNS posi                     
+02E 20EE |                    STORE d5+                    
+02F 10E1 |                    LOAD y2                      
+030 40E3 |                    SUBT y3                      
+031 20E9 |                    STORE d6                     
+032 10E9 |                    LOAD d6                      
+033 20F0 |                    STORE k                      
+034 0116 |                    JNS posi                     
+035 20EF |                    STORE d6+                    
+         |                                                
+036 10EA |                    LOAD d1+                     
+037 20F4 |                    STORE elevar1                
+038 10EA |                    LOAD d1+                     
+039 20F5 |                    STORE elevar2                
+03A 0106 |                    JNS cuadrado                 
+03B 20EA |                    STORE d1+                    
+         |                                                
+03C 10EB |                    LOAD d2+                     
+03D 20F4 |                    STORE elevar1                
+03E 10EB |                    LOAD d2+                     
+03F 20F5 |                    STORE elevar2                
+040 0106 |                    JNS cuadrado                 
+041 20EB |                    STORE d2+                    
+         |                                                
+042 10EC |                    LOAD d3+                     
+043 20F4 |                    STORE elevar1                
+044 10EC |                    LOAD d3+                     
+045 20F5 |                    STORE elevar2                
+046 0106 |                    JNS cuadrado                 
+047 20EC |                    STORE d3+                    
+         |                                                
+048 10ED |                    LOAD d4+                     
+049 20F4 |                    STORE elevar1                
+04A 10ED |                    LOAD d4+                     
+04B 20F5 |                    STORE elevar2                
+04C 0106 |                    JNS cuadrado                 
+04D 20ED |                    STORE d4+                    
+         |                                                
+04E 10EE |                    LOAD d5+                     
+04F 20F4 |                    STORE elevar1                
+050 10EE |                    LOAD d5+                     
+051 20F5 |                    STORE elevar2                
+052 0106 |                    JNS cuadrado                 
+053 20EE |                    STORE d5+                    
+         |                                                
+054 10EF |                    LOAD d6+                     
+055 20F4 |                    STORE elevar1                
+056 10EF |                    LOAD d6+                     
+057 20F5 |                    STORE elevar2                
+058 0106 |                    JNS cuadrado                 
+059 20EF |                    STORE d6+                    
+         |                                                
+05A 10EA |                    LOAD d1+                     
+05B 30EB |                    ADD d2+                      
+05C 20F6 |                    STORE lado1                  
+05D 10F6 |                    LOAD lado1                   
+05E 2154 |                    STORE div_x                  
+05F 10FD |                    LOAD cien                    
+060 2155 |                    STORE div_y                  
+061 013D |                    JNS div                      
+062 20F6 |                    STORE lado1                  
+         |                                                
+063 10EC |                    LOAD d3+                     
+064 30ED |                    ADD d4+                      
+065 20F7 |                    STORE lado2                  
+066 10F7 |                    LOAD lado2                   
+067 2154 |                    STORE div_x                  
+068 10FD |                    LOAD cien                    
+069 2155 |                    STORE div_y                  
+06A 013D |                    JNS div                      
+06B 20F7 |                    STORE lado2                  
+         |                                                
+06C 10EE |                    LOAD d5+                     
+06D 30EF |                    ADD d6+                      
+06E 20F8 |                    STORE lado3                  
+06F 10F8 |                    LOAD lado3                   
+070 2154 |                    STORE div_x                  
+071 10FD |                    LOAD cien                    
+072 2155 |                    STORE div_y                  
+073 013D |                    JNS div                      
+074 20F8 |                    STORE lado3                  
+         |                                                
+075 10F6 |                    LOAD lado1                   
+076 20F9 |                    STORE raiz                   
+077 0120 |                    JNS babil                    
+078 20F6 |                    STORE lado1                  
+         |                                                
+079 10F7 |                    LOAD lado2                   
+07A 20F9 |                    STORE raiz                   
+07B 0120 |                    JNS babil                    
+07C 20F7 |                    STORE lado2                  
+         |                                                
+07D 10F8 |                    LOAD lado3                   
+07E 20F9 |                    STORE raiz                   
+07F 0120 |                    JNS babil                    
+080 20F8 |                    STORE lado3                  
+         |                                                
+081 10F6 |                    LOAD lado1                   
+082 30F7 |                    ADD lado2                    
+083 40F8 |                    SUBT lado3                   
+084 8800 |                    SKIPCOND 800                 
+085 90DA |                    JUMP NOtriangulo             
+086 9087 |                    JUMP next                    
+         |                                                
+087 10F7 |  next              LOAD lado2                   
+088 30F8 |                    ADD lado3                    
+089 40F6 |                    SUBT lado1                   
+08A 8800 |                    SKIPCOND 800                 
+08B 90DA |                    JUMP NOtriangulo             
+08C 908D |                    JUMP next2                   
+         |                                                
+08D 10F8 |  next2             LOAD lado3                   
+08E 30F6 |                    ADD lado1                    
+08F 40F7 |                    SUBT lado2                   
+090 8800 |                    SKIPCOND 800                 
+091 90DA |                    JUMP NOtriangulo             
+092 9093 |                    JUMP mayor_lado1             
+         |                                                
+093 10F6 |  mayor_lado1       LOAD lado1                   
+094 40F7 |                    SUBT lado2                   
+095 8800 |                    SKIPCOND 800                 
+096 90A2 |                    JUMP mayor_lado2             
+097 10F6 |                    LOAD lado1                   
+098 40F8 |                    SUBT lado3                   
+099 8800 |                    SKIPCOND 800                 
+09A 90AD |                    JUMP mayor_lado3             
+09B 10F6 |                    LOAD lado1                   
+09C 2100 |                    STORE c                      
+09D 10F7 |                    LOAD lado2                   
+09E 20FE |                    STORE a                      
+09F 10F8 |                    LOAD lado3                   
+0A0 20FF |                    STORE b                      
+0A1 90B4 |                    JUMP elevar_lados            
+         |                                                
+0A2 10F7 |  mayor_lado2       LOAD lado2                   
+0A3 40F8 |                    SUBT lado3                   
+0A4 8800 |                    SKIPCOND 800                 
+0A5 90AD |                    JUMP mayor_lado3             
+0A6 10F7 |                    LOAD lado2                   
+0A7 2100 |                    STORE c                      
+0A8 10F6 |                    LOAD lado1                   
+0A9 20FE |                    STORE a                      
+0AA 10F8 |                    LOAD lado3                   
+0AB 20FF |                    STORE b                      
+0AC 90B4 |                    JUMP elevar_lados            
+         |                                                
+0AD 10F8 |  mayor_lado3       LOAD lado3                   
+0AE 2100 |                    STORE c                      
+0AF 10F6 |                    LOAD lado1                   
+0B0 20FE |                    STORE a                      
+0B1 10F7 |                    LOAD lado2                   
+0B2 20FF |                    STORE b                      
+0B3 90B4 |                    JUMP elevar_lados            
+         |                                                
+0B4 10FE |  elevar_lados      LOAD a                       
+0B5 20F4 |                    STORE elevar1                
+0B6 10FE |                    LOAD a                       
+0B7 20F5 |                    STORE elevar2                
+0B8 0106 |                    JNS cuadrado                 
+0B9 2101 |                    STORE a_cuadrado             
+0BA 10FF |                    LOAD b                       
+0BB 20F4 |                    STORE elevar1                
+0BC 10FF |                    LOAD b                       
+0BD 20F5 |                    STORE elevar2                
+0BE 0106 |                    JNS cuadrado                 
+0BF 2102 |                    STORE b_cuadrado             
+0C0 1100 |                    LOAD c                       
+0C1 20F4 |                    STORE elevar1                
+0C2 1100 |                    LOAD c                       
+0C3 20F5 |                    STORE elevar2                
+0C4 0106 |                    JNS cuadrado                 
+0C5 2103 |                    STORE c_cuadrado             
+0C6 90C7 |                    JUMP mirar_triangulos        
+         |                                                
+0C7 1103 |  mirar_triangulos  LOAD c_cuadrado              
+0C8 4101 |                    SUBT a_cuadrado              
+0C9 4102 |                    SUBT b_cuadrado              
+0CA 8000 |                    SKIPCOND 000                 
+0CB 90CF |                    JUMP mirar2                  
+0CC 1156 |                    LOAD uno                     
+0CD 6000 |                    OUTPUT                       
+0CE 90DD |                    JUMP exit                    
+         |                                                
+0CF 1103 |  mirar2            LOAD c_cuadrado              
+0D0 4101 |                    SUBT a_cuadrado              
+0D1 4102 |                    SUBT b_cuadrado              
+0D2 8800 |                    SKIPCOND 800                 
+0D3 90D7 |                    JUMP ultimo                  
+0D4 1157 |                    LOAD dos                     
+0D5 6000 |                    OUTPUT                       
+0D6 90DD |                    JUMP exit                    
+         |                                                
+0D7 10FB |  ultimo            LOAD tres                    
+0D8 6000 |                    OUTPUT                       
+0D9 90DD |                    JUMP exit                    
+         |                                                
+0DA 10FA |  NOtriangulo       LOAD MENOSuno                
+0DB 6000 |                    OUTPUT                       
+0DC 90DD |                    JUMP exit                    
+         |                                                
+0DD 7000 |  exit              HALT                         
+0DE 0000 |  x1                DEC 0                        
+0DF 0000 |  y1                DEC 0                        
+0E0 0000 |  x2                DEC 0                        
+0E1 0000 |  y2                DEC 0                        
+0E2 0000 |  x3                DEC 0                        
+0E3 0000 |  y3                DEC 0                        
+0E4 0000 |  d1                DEC 0                        
+0E5 0000 |  d2                DEC 0                        
+0E6 0000 |  d3                DEC 0                        
+0E7 0000 |  d4                DEC 0                        
+0E8 0000 |  d5                DEC 0                        
+0E9 0000 |  d6                DEC 0                        
+0EA 0000 |  d1+               DEC 0                        
+0EB 0000 |  d2+               DEC 0                        
+0EC 0000 |  d3+               DEC 0                        
+0ED 0000 |  d4+               DEC 0                        
+0EE 0000 |  d5+               DEC 0                        
+0EF 0000 |  d6+               DEC 0                        
+0F0 0000 |  k                 DEC 0                        
+0F1 0000 |  abs               DEC 0                        
+0F2 0000 |  res_elevar        DEC 0                        
+0F3 0000 |  temp              DEC 0                        
+0F4 0000 |  elevar1           DEC 0                        
+0F5 0000 |  elevar2           DEC 0                        
+0F6 0000 |  lado1             DEC 0                        
+0F7 0000 |  lado2             DEC 0                        
+0F8 0000 |  lado3             DEC 0                        
+0F9 0000 |  raiz              DEC 0                        
+0FA FFFF |  MENOSuno          DEC -1                       
+0FB 0003 |  tres              DEC 3                        
+0FC 0000 |  res_final         DEC 0                        
+0FD 0064 |  cien              DEC 100                      
+0FE 0000 |  a                 DEC 0                        
+0FF 0000 |  b                 DEC 0                        
+100 0000 |  c                 DEC 0                        
+101 0000 |  a_cuadrado        DEC 0                        
+102 0000 |  b_cuadrado        DEC 0                        
+103 0000 |  c_cuadrado        DEC 0                        
+104 0000 |  acu               DEC 0                        
+105 0000 |  obt               DEC 0                        
+         |                                                
+106 0000 |  cuadrado          DEC 0                        
+107 A000 |                    CLEAR                        
+108 20F2 |                    STORE res_elevar             
+109 20F3 |                    STORE temp                   
+10A 40F5 |  while_cuadrado    SUBT elevar2                 
+10B 8000 |                    SKIPCOND 000                 
+10C 9114 |                    JUMP endwhile_cuadrado       
+10D 10F4 |                    LOAD elevar1                 
+10E 30F2 |                    ADD res_elevar               
+10F 20F2 |                    STORE res_elevar             
+110 10F3 |                    LOAD temp                    
+111 3156 |                    ADD uno                      
+112 20F3 |                    STORE temp                   
+113 910A |                    JUMP while_cuadrado          
+114 10F2 |  endwhile_cuadrado LOAD res_elevar              
+115 C106 |                    JUMPI cuadrado               
+         |                                                
+         |                                                
+116 0000 |  posi              DEC 0                        
+117 A000 |                    CLEAR                        
+118 20F1 |                    STORE abs                    
+119 10F0 |                    LOAD k                       
+11A 8000 |                    SKIPCOND 000                 
+11B C116 |                    JUMPI posi                   
+11C 40F0 |                    SUBT k                       
+11D 40F0 |                    SUBT k                       
+11E 20F1 |                    STORE abs                    
+11F C116 |                    JUMPI posi                   
+         |                                                
+         |                                                
+120 0000 |  babil             DEC 0                        
+121 10F9 |                    LOAD raiz                    
+122 2154 |                    STORE div_x                  
+123 1157 |                    LOAD dos                     
+124 2155 |                    STORE div_y                  
+125 013D |                    JNS div                      
+126 213B |                    STORE div_lado1              
+127 1157 |                    LOAD dos                     
+128 213C |                    STORE div_lado2              
+129 113B |  while_raiz        LOAD div_lado1               
+12A 413C |                    SUBT div_lado2               
+12B 8800 |                    SKIPCOND 800                 
+12C 9139 |                    JUMP endwhile_raiz           
+12D 113B |                    LOAD div_lado1               
+12E 313C |                    ADD div_lado2                
+12F 2162 |                    STORE avg_x                  
+130 0159 |                    JNS avg                      
+131 213B |                    STORE div_lado1              
+132 10F9 |                    LOAD raiz                    
+133 2154 |                    STORE div_x                  
+134 113B |                    LOAD div_lado1               
+135 2155 |                    STORE div_y                  
+136 013D |                    JNS div                      
+137 213C |                    STORE div_lado2              
+138 9129 |                    JUMP while_raiz              
+139 113C |  endwhile_raiz     LOAD div_lado2               
+13A C120 |                    JUMPI babil                  
+13B 0000 |  div_lado1         DEC 0                        
+13C 0000 |  div_lado2         DEC 0                        
+         |                                                
+         |                                                
+13D 0000 |  div               DEC 0                        
+13E A000 |                    CLEAR                        
+13F 2158 |                    STORE div_i                  
+140 1154 |                    LOAD div_x                   
+141 4155 |  while             SUBT div_y                   
+142 8800 |                    SKIPCOND 800                 
+143 914A |                    JUMP endwhile                
+144 2154 |                    STORE div_x                  
+145 1158 |                    LOAD div_i                   
+146 3156 |                    ADD uno                      
+147 2158 |                    STORE div_i                  
+148 1154 |                    LOAD div_x                   
+149 9141 |                    JUMP while                   
+14A 1154 |  endwhile          LOAD div_x                   
+14B 4156 |                    SUBT uno                     
+14C 8400 |                    SKIPCOND 400                 
+14D 9150 |                    JUMP par                     
+14E 1158 |                    LOAD div_i                   
+14F C13D |                    JUMPI div                    
+150 1158 |  par               LOAD div_i                   
+151 3156 |                    ADD uno                      
+152 2158 |                    STORE div_i                  
+153 C13D |                    JUMPI div                    
+154 0000 |  div_x             DEC 0                        
+155 0000 |  div_y             DEC 0                        
+156 0001 |  uno               DEC 1                        
+157 0002 |  dos               DEC 2                        
+158 0000 |  div_i             DEC 0                        
+         |                                                
+         |                                                
+159 0000 |  avg               DEC 0                        
+15A 1162 |                    LOAD avg_x                   
+15B 2154 |                    STORE div_x                  
+15C 1157 |                    LOAD dos                     
+15D 2155 |                    STORE div_y                  
+15E 013D |                    JNS div                      
+15F 2163 |                    STORE res_avg                
+160 1163 |                    LOAD res_avg                 
+161 C159 |                    JUMPI avg                    
+162 0000 |  avg_x             DEC 0                        
+163 0000 |  res_avg           DEC 0                        
+
+Assembly successful.
+
+         SYMBOL TABLE
+         -------------------------------------------------------------
+          Symbol            | Defined | References 
+         -------------------+---------+-------------------------------
+          MENOSuno          |   0FA   | 0DA
+          NOtriangulo       |   0DA   | 085, 08B, 091
+          a                 |   0FE   | 09E, 0A9, 0B0, 0B4, 0B6
+          a_cuadrado        |   101   | 0B9, 0C8, 0D0
+          abs               |   0F1   | 118, 11E
+          acu               |   104   | 
+          avg               |   159   | 130, 161
+          avg_x             |   162   | 12F, 15A
+          b                 |   0FF   | 0A0, 0AB, 0B2, 0BA, 0BC
+          b_cuadrado        |   102   | 0BF, 0C9, 0D1
+          babil             |   120   | 077, 07B, 07F, 13A
+          c                 |   100   | 09C, 0A7, 0AE, 0C0, 0C2
+          c_cuadrado        |   103   | 0C5, 0C7, 0CF
+          cien              |   0FD   | 05F, 068, 071
+          cuadrado          |   106   | 03A, 040, 046, 04C, 052, 058, 
+                            |         | 0B8, 0BE, 0C4, 115
+          d1                |   0E4   | 00E, 00F
+          d1+               |   0EA   | 012, 036, 038, 03B, 05A
+          d2                |   0E5   | 015, 016
+          d2+               |   0EB   | 019, 03C, 03E, 041, 05B
+          d3                |   0E6   | 01C, 01D
+          d3+               |   0EC   | 020, 042, 044, 047, 063
+          d4                |   0E7   | 023, 024
+          d4+               |   0ED   | 027, 048, 04A, 04D, 064
+          d5                |   0E8   | 02A, 02B
+          d5+               |   0EE   | 02E, 04E, 050, 053, 06C
+          d6                |   0E9   | 031, 032
+          d6+               |   0EF   | 035, 054, 056, 059, 06D
+          div               |   13D   | 061, 06A, 073, 125, 136, 14F, 
+                            |         | 153, 15E
+          div_i             |   158   | 13F, 145, 147, 14E, 150, 152
+          div_lado1         |   13B   | 126, 129, 12D, 131, 134
+          div_lado2         |   13C   | 128, 12A, 12E, 137, 139
+          div_x             |   154   | 05E, 067, 070, 122, 133, 140, 
+                            |         | 144, 148, 14A, 15B
+          div_y             |   155   | 060, 069, 072, 124, 135, 141, 
+                            |         | 15D
+          dos               |   157   | 0D4, 123, 127, 15C
+          elevar1           |   0F4   | 037, 03D, 043, 049, 04F, 055, 
+                            |         | 0B5, 0BB, 0C1, 10D
+          elevar2           |   0F5   | 039, 03F, 045, 04B, 051, 057, 
+                            |         | 0B7, 0BD, 0C3, 10A
+          elevar_lados      |   0B4   | 0A1, 0AC, 0B3
+          endwhile          |   14A   | 143
+          endwhile_cuadrado |   114   | 10C
+          endwhile_raiz     |   139   | 12C
+          exit              |   0DD   | 0CE, 0D6, 0D9, 0DC
+          k                 |   0F0   | 010, 017, 01E, 025, 02C, 033, 
+                            |         | 119, 11C, 11D
+          lado1             |   0F6   | 05C, 05D, 062, 075, 078, 081, 
+                            |         | 089, 08E, 093, 097, 09B, 0A8, 
+                            |         | 0AF
+          lado2             |   0F7   | 065, 066, 06B, 079, 07C, 082, 
+                            |         | 087, 08F, 094, 09D, 0A2, 0A6, 
+                            |         | 0B1
+          lado3             |   0F8   | 06E, 06F, 074, 07D, 080, 083, 
+                            |         | 088, 08D, 098, 09F, 0A3, 0AA, 
+                            |         | 0AD
+          mayor_lado1       |   093   | 092
+          mayor_lado2       |   0A2   | 096
+          mayor_lado3       |   0AD   | 09A, 0A5
+          mirar2            |   0CF   | 0CB
+          mirar_triangulos  |   0C7   | 0C6
+          next              |   087   | 086
+          next2             |   08D   | 08C
+          obt               |   105   | 
+          par               |   150   | 14D
+          posi              |   116   | 011, 018, 01F, 026, 02D, 034, 
+                            |         | 11B, 11F
+          raiz              |   0F9   | 076, 07A, 07E, 121, 132
+          res_avg           |   163   | 15F, 160
+          res_elevar        |   0F2   | 108, 10E, 10F, 114
+          res_final         |   0FC   | 
+          temp              |   0F3   | 109, 110, 112
+          tres              |   0FB   | 0D7
+          ultimo            |   0D7   | 0D3
+          uno               |   156   | 0CC, 111, 146, 14B, 151
+          while             |   141   | 149
+          while_cuadrado    |   10A   | 113
+          while_raiz        |   129   | 138
+          x1                |   0DE   | 001, 00C, 01A
+          x2                |   0E0   | 005, 00D, 028
+          x3                |   0E2   | 009, 01B, 029
+          y1                |   0DF   | 003, 013, 021
+          y2                |   0E1   | 007, 014, 02F
+          y3                |   0E3   | 00B, 022, 030
+         -------------------------------------------------------------
+
+

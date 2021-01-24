@@ -1,0 +1,26 @@
+input
+store A
+input
+store B
+input
+store C
+
+load A
+add A
+subt B
+subt B
+subt B
+subt B
+subt B
+subt B
+add C
+add C
+store Z
+load Z
+output
+
+halt
+A, dec 0
+B, dec 0
+C, dec 0
+Z, dec 0

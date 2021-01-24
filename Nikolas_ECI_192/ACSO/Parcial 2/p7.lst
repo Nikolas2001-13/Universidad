@@ -1,0 +1,40 @@
+     Assembly listing for: p7.mas
+                Assembled: Thu Oct 24 16:40:19 COT 2019
+
+000 5000 |         INPUT             
+001 2010 |         STORE X           
+         |                          
+002 1010 |         LOAD X            
+003 4012 |         SUBT uno          
+004 8000 |         SKIPCOND 000      
+005 900F |         JUMP end          
+006 4010 |         SUBT 010          
+007 8800 |         SKIPCOND 800      
+008 900F |         JUMP end          
+009 1011 |         LOAD Y            
+00A 3010 |         ADD X             
+00B 3010 |         ADD X             
+00C 2011 |         STORE Y           
+00D 1011 |         LOAD Y            
+00E 6000 |         OUTPUT            
+         |                          
+00F 7000 |  end    HALT              
+010 0000 |  X      DEC 0             
+011 0000 |  Y      DEC 0             
+012 0001 |  uno    DEC 1             
+013 000A |  diez   DEC 10            
+
+Assembly successful.
+
+         SYMBOL TABLE
+         --------------------------------------------------
+          Symbol | Defined | References 
+         --------+---------+-------------------------------
+          X      |   010   | 001, 002, 00A, 00B
+          Y      |   011   | 009, 00C, 00D
+          diez   |   013   | 
+          end    |   00F   | 005, 008
+          uno    |   012   | 003
+         --------------------------------------------------
+
+

@@ -1,0 +1,64 @@
+input
+store a
+input
+store b
+input
+store c
+
+load a
+store div_x
+jns div
+store div_a
+load b
+store div_x
+jns div
+store div_b
+load c
+store div_x
+jns div
+store div_c
+load z
+add div_a
+add div_b
+add div_c
+store z
+output
+halt
+
+div, dec 0
+clear
+store div_res
+load div_x
+while, subt div_y
+skipcond 800
+jump endwhile
+store div_x
+load div_res
+add uno
+store div_res
+load div_x
+jump while
+
+endwhile, load div_x
+subt uno
+skipcond 400
+jump par
+load div_res
+jumpi div
+
+par, load div_res
+add uno
+store div_res
+jumpi div
+
+a, dec 0
+b, dec 0
+c, dec 0
+z, dec 0
+div_a, dec 0
+div_b, dec 0
+div_c, dec 0
+div_x, dec 0
+div_y, dec 2
+div_res, dec 0
+uno, dec 1

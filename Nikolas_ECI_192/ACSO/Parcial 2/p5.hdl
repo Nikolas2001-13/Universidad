@@ -1,0 +1,25 @@
+CHIP p5{
+	IN A,B,C;
+	OUT Y,Z;
+	
+	PARTS:
+	
+	Not(in=A, out=NotA);
+	Not(in=B, out=NotB);
+	Not(in=C, out=NotC);
+	
+	And(a=NotB, b=C, out=NotBAndC);
+	And(a=A, b=B, out=AAndB);
+	Or(a=NotBAndC, b=AAndB, out=Y);
+	
+	And(a=NotA, b=C, out=NotAAndC);
+	And(a=NotA, b=B, out=NotAAndB);
+	And(a=B, b=C, out=BAndC);
+	
+	And(a=A, b=NotB, out=AAndNotB);
+	And(a=AAndNotB, b=NotC, out=AAndNotBAndNotC);
+	
+	Or(a=NotAAndC, b=NotAAndB, out=NotAAndCOrNotAAndB);
+	Or(a=NotAAndCOrNotAAndB, b=BAndC, out=NotAAndCOrNotAAndBOrBAndC);
+	Or(a=NotAAndCOrNotAAndBOrBAndC, b=AAndNotBAndNotC, out=Z);
+}

@@ -1,0 +1,52 @@
+1.Usando circuitos builtin del Simulador de Hardware, construya una ALU que recibe dos entradas de un bit (A y B) , una entrada de control (C) de un bit y dos bits de salida (Y, Z).
+
+De acuerdo al valor de C debe realizar las siguientes operaciones
+
+C = 0, Z = A + B. Si hay carry Y = 1, de lo contrario Y = 0
+
+C = 1,  Z =  A → B, Y = A > B,  donde  → es la implicación lógica
+
+Como respuesta copie el texto del HDL
+
+2.Escriba las letras usadas en unix para identificar los permisos de un archivo de un archivo
+ls -l
+
+3. Escriba la formula simplificada para un circuito que determine si existen unos consecutivos en un palabra de 5 bits
+DE+CD+BC+AB
+
+4.Escriba en lenguaje ensamblador de Marie el codigo equivalente al fragmento de codigo 
+
+X := 10
+while X >= 0 do
+   X := X - 1
+endwhile
+
+5.Escriba en lenguaje ensamblador de MARIE un programa que evalue la expresion Z=(A/2)+(B+C)/2. Implemente y utilice la funcion div(X,Y) que retorna en el acumulador la división entera de dos numeros positivos X e Y
+
+6.Diseñe un circuito de tres (3) entradas que determine si exactamente dos (2)
+de sus entradas son iguales. Las entradas del ciruito se denominan X, Y y Z y la salida del circuito se
+denomina S. Como respuesta, copie el código HDL 
+
+7. Nombre del comando Unix para limpiar la pantalla
+
+8. 
+Answer saved
+Marked out of 1.00
+Not flaggedFlag question
+Question text
+Escriba en lenguaje ensamblador de MARIE un programa que evalue la expresion Z=2(A - 3B)
+
+9. Escriba en lenguaje ensamblador de Marie el codigo equivalente al fragmento de codigo 
+
+if X < 1 then
+  if X > 10 then
+    Y := X + X
+  endif
+endif
+
+10.
+a. Esta escrito en lenguaje de maquina MARIE
+b. Esta escrito en lenguaje ensamblador de MARIE - ESTA
+c. Tiene errores de sintaxis y de logica - ESTA
+d. Calcula la suma de los elementos del vector
+e. Se queda en ciclo infinito - ESTA

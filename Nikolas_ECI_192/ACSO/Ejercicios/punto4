@@ -1,0 +1,19 @@
+while, load x 
+skipcond 800
+jump igual
+load x
+subt one
+store x
+jump while
+igual, load x
+skipcond 400
+jump endwhile
+load x
+subt one
+store x
+jump endwhile
+endwhile, load x
+output 
+halt
+x, dec 10
+one, dec 1

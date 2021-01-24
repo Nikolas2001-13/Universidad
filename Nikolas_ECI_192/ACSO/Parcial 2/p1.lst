@@ -1,0 +1,86 @@
+     Assembly listing for: p1.mas
+                Assembled: Thu Oct 24 16:58:39 COT 2019
+
+000 5000 |           INPUT               
+001 202C |           STORE A             
+002 5000 |           INPUT               
+003 202D |           STORE B             
+004 5000 |           INPUT               
+005 202E |           STORE C             
+         |                              
+006 102C |           LOAD A              
+007 302D |           ADD B               
+008 2032 |           STORE div_x         
+009 0015 |           JNS div             
+00A 2030 |           STORE div_AB        
+00B 102E |           LOAD C              
+00C 2032 |           STORE div_x         
+00D 0015 |           JNS div             
+00E 2031 |           STORE div_C         
+00F 102F |           LOAD Z              
+010 3030 |           ADD div_AB          
+011 3031 |           ADD div_C           
+012 202F |           STORE Z             
+013 6000 |           OUTPUT              
+014 7000 |           HALT                
+         |                              
+015 0000 |  div      DEC 0               
+016 A000 |           CLEAR               
+017 2034 |           STORE div_res       
+018 1032 |           LOAD div_x          
+019 4033 |  while    SUBT div_y          
+01A 8800 |           SKIPCOND 800        
+01B 9022 |           JUMP endwhile       
+01C 2032 |           STORE div_x         
+01D 1034 |           LOAD div_res        
+01E 3035 |           ADD uno             
+01F 2034 |           STORE div_res       
+020 1032 |           LOAD div_x          
+021 9019 |           JUMP while          
+         |                              
+022 1032 |  endwhile LOAD div_x          
+023 4035 |           SUBT uno            
+024 8400 |           SKIPCOND 400        
+025 9028 |           JUMP par            
+026 1034 |           LOAD div_res        
+027 C015 |           JUMPI div           
+         |                              
+028 1034 |  par      LOAD div_res        
+029 3035 |           ADD uno             
+02A 2034 |           STORE div_res       
+02B C015 |           JUMPI div           
+         |                              
+02C 0000 |  A        DEC 0               
+02D 0000 |  B        DEC 0               
+02E 0000 |  C        DEC 0               
+02F 0000 |  Z        DEC 0               
+030 0000 |  div_AB   DEC 0               
+031 0000 |  div_C    DEC 0               
+032 0000 |  div_x    DEC 0               
+033 0002 |  div_y    DEC 2               
+034 0000 |  div_res  DEC 0               
+035 0001 |  uno      DEC 1               
+
+Assembly successful.
+
+         SYMBOL TABLE
+         ----------------------------------------------------
+          Symbol   | Defined | References 
+         ----------+---------+-------------------------------
+          A        |   02C   | 001, 006
+          B        |   02D   | 003, 007
+          C        |   02E   | 005, 00B
+          Z        |   02F   | 00F, 012
+          div      |   015   | 009, 00D, 027, 02B
+          div_AB   |   030   | 00A, 010
+          div_C    |   031   | 00E, 011
+          div_res  |   034   | 017, 01D, 01F, 026, 028, 02A
+          div_x    |   032   | 008, 00C, 018, 01C, 020, 022
+          div_y    |   033   | 019
+          endwhile |   022   | 01B
+          par      |   028   | 025
+          uno      |   035   | 01E, 023, 029
+          while    |   019   | 021
+         ----------------------------------------------------
+
+

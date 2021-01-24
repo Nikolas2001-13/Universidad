@@ -1,0 +1,56 @@
+input 
+store a
+input
+store b
+input 
+store c
+load a 
+store div_x
+load dos
+store div_y
+jns div
+store respuesta
+load b
+add c
+store div_x
+load dos
+store div_y
+jns div
+add respuesta
+store respuesta
+output
+halt
+a, dec 0
+b, dec 0
+c, dec 0 
+dos, dec 2
+respuesta, dec 0
+div, dec 0
+clear
+store div_i
+while, load div_x
+subt div_y 
+skipcond 800
+jump igual
+load div_i
+add div_uno
+store div_i
+load div_y
+add div_dos
+store div_y
+jump while
+igual, load div_x
+subt div_y
+skipcond 400
+jump endwhile
+load div_i
+add div_uno
+store div_i
+jump endwhile
+endwhile, load div_i
+jumpI div
+div_x, dec 0
+div_y, dec 0
+div_uno, dec 1
+div_dos, dec 2
+div_i, dec 0

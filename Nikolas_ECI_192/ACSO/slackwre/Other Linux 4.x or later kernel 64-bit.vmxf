@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Foundry>
+<VM>
+<VMId type="string">52 50 42 3f 3f b9 ee 22-6c ee aa 08 7d 73 f3 68</VMId>
+<ClientMetaData>
+<clientMetaDataAttributes/>
+<HistoryEventList/></ClientMetaData>
+<vmxPathName type="string">Other Linux 4.x or later kernel 64-bit.vmx</vmxPathName></VM></Foundry>

@@ -1,0 +1,99 @@
+     Assembly listing for: lab-MARIE.mas
+                Assembled: Thu Oct 03 18:42:32 COT 2019
+
+000 5000 |            INPUT                
+001 2034 |            STORE a              
+002 5000 |            INPUT                
+003 2035 |            STORE b              
+004 5000 |            INPUT                
+005 2036 |            STORE c              
+         |                                
+006 1039 |            LOAD cero            
+007 2037 |            STORE bx             
+008 1035 |  while1    LOAD b               
+009 8800 |            SKIPCOND 800         
+00A 9012 |            JUMP endwhile1       
+00B 1035 |            LOAD b               
+00C 4038 |            SUBT uno             
+00D 2035 |            STORE b              
+00E 1037 |            LOAD bx              
+00F 303D |            ADD x                
+010 2037 |            STORE bx             
+011 9008 |            JUMP while1          
+012 9013 |  endwhile1 JUMP sig             
+         |                                
+013 1039 |  sig       LOAD cero            
+014 203B |            STORE xx             
+015 103D |  while2    LOAD x               
+016 8800 |            SKIPCOND 800         
+017 901F |            JUMP endwhile2       
+018 103B |            LOAD xx              
+019 303E |            ADD x1               
+01A 203B |            STORE xx             
+01B 103D |            LOAD x               
+01C 4038 |            SUBT uno             
+01D 203D |            STORE x              
+01E 9015 |            JUMP while2          
+01F 9020 |  endwhile2 JUMP sig2            
+         |                                
+020 1039 |  sig2      LOAD cero            
+021 203C |            STORE ax             
+022 1034 |  while3    LOAD a               
+023 8800 |            SKIPCOND 800         
+024 902C |            JUMP endwhile3       
+025 103C |            LOAD ax              
+026 303B |            ADD xx               
+027 203C |            STORE ax             
+028 1034 |            LOAD a               
+029 4038 |            SUBT uno             
+02A 2034 |            STORE a              
+02B 9022 |            JUMP while3          
+02C 103A |  endwhile3 LOAD res             
+02D 303C |            ADD ax               
+02E 3037 |            ADD bx               
+02F 3036 |            ADD c                
+030 203A |            STORE res            
+031 103A |            LOAD res             
+032 6000 |            OUTPUT               
+         |                                
+033 7000 |            HALT                 
+034 0000 |  a         DEC 0                
+035 0000 |  b         DEC 0                
+036 0000 |  c         DEC 0                
+037 0000 |  bx        DEC 0                
+038 0001 |  uno       DEC 1                
+039 0000 |  cero      DEC 0                
+03A 0000 |  res       DEC 0                
+03B 0000 |  xx        DEC 0                
+03C 0000 |  ax        DEC 0                
+03D 0002 |  x         DEC 2                
+03E 0002 |  x1        DEC 2                
+
+Assembly successful.
+
+         SYMBOL TABLE
+         -----------------------------------------------------
+          Symbol    | Defined | References 
+         -----------+---------+-------------------------------
+          a         |   034   | 001, 022, 028, 02A
+          ax        |   03C   | 021, 025, 027, 02D
+          b         |   035   | 003, 008, 00B, 00D
+          bx        |   037   | 007, 00E, 010, 02E
+          c         |   036   | 005, 02F
+          cero      |   039   | 006, 013, 020
+          endwhile1 |   012   | 00A
+          endwhile2 |   01F   | 017
+          endwhile3 |   02C   | 024
+          res       |   03A   | 02C, 030, 031
+          sig       |   013   | 012
+          sig2      |   020   | 01F
+          uno       |   038   | 00C, 01C, 029
+          while1    |   008   | 011
+          while2    |   015   | 01E
+          while3    |   022   | 02B
+          x         |   03D   | 00F, 015, 01B, 01D
+          x1        |   03E   | 019
+          xx        |   03B   | 014, 018, 01A, 026
+         -----------------------------------------------------
+
+

@@ -1,0 +1,13 @@
+CHIP quiz2{
+IN A,B,C,D,E;
+OUT S;
+
+PARTS:
+Or (a=E, b=C, out=EorC);
+And (a=D, b=EorC, out=DandEorC);
+
+Or (a=C, b=A, out=CorA);
+And (a=B, b=CorA, out=BandCorA);
+
+Or (a=DandEorC, b=BandCorA, out=S);
+}

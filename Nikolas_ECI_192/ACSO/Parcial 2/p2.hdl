@@ -1,0 +1,19 @@
+CHIP p2{
+	IN X,Y,Z;
+	OUT S;
+	
+	PARTS:
+	
+	Not(in=X, out=NotX);
+	Not(in=Y, out=NotY);
+	Not(in=Z, out=NotZ);
+	
+	Or(a=X, b=Y, out=XOrY);
+	Or(a=XOrY, b=Z, out=XOrYOrZ);
+	
+	Or(a=NotX, b=NotY, out=NotXOrNotY);
+	Or(a=NotXOrNotY, b=NotZ, out=NotXOrNotYOrNotZ);
+	
+	And(a=XOrYOrZ, b=NotXOrNotYOrNotZ, out=S);
+
+}

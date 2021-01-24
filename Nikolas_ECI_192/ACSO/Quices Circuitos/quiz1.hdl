@@ -1,0 +1,8 @@
+CHIP quiz1{
+IN A,B,C;
+OUT S;
+
+PARTS:
+Or (a=C, b=C, out=S);
+
+}

@@ -1,0 +1,529 @@
+     Assembly listing for: raiz completa.mas
+                Assembled: Fri Dec 06 11:13:01 COT 2019
+
+000 5000 |                INPUT                    
+001 2135 |                STORE a                  
+002 5000 |                INPUT                    
+003 2136 |                STORE b                  
+004 5000 |                INPUT                    
+005 2137 |                STORE c                  
+         |                                        
+006 1135 |                LOAD a                   
+007 8400 |                SKIPCOND 400             
+008 900A |                JUMP nn                  
+009 9077 |                JUMP imposible           
+         |                                        
+00A 1136 |  nn            LOAD b                   
+00B 4136 |                SUBT b                   
+00C 4136 |                SUBT b                   
+00D 213F |                STORE MENOSb             
+         |                                        
+00E 1135 |                LOAD a                   
+00F 3135 |                ADD a                    
+010 2140 |                STORE DOSa               
+         |                                        
+011 1136 |                LOAD b                   
+012 8000 |                SKIPCOND 000             
+013 9018 |                JUMP cuadrado            
+014 1136 |                LOAD b                   
+015 4136 |                SUBT b                   
+016 4136 |                SUBT b                   
+017 2136 |                STORE b                  
+         |                                        
+018 113A |  cuadrado      LOAD cero                
+019 2138 |                STORE bb                 
+01A 1136 |                LOAD b                   
+01B 2139 |                STORE b1                 
+01C 1136 |  while_bb      LOAD b                   
+01D 8800 |                SKIPCOND 800             
+01E 9026 |                JUMP endwhile_bb         
+01F 1138 |                LOAD bb                  
+020 3139 |                ADD b1                   
+021 2138 |                STORE bb                 
+022 1136 |                LOAD b                   
+023 413B |                SUBT uno                 
+024 2136 |                STORE b                  
+025 901C |                JUMP while_bb            
+026 9027 |  endwhile_bb   JUMP sig                 
+         |                                        
+027 1135 |  sig           LOAD a                   
+028 8000 |                SKIPCOND 000             
+029 9032 |                JUMP posi                
+02A 1137 |                LOAD c                   
+02B 8800 |                SKIPCOND 800             
+02C 903F |                JUMP ambos               
+02D 1135 |                LOAD a                   
+02E 4135 |                SUBT a                   
+02F 4135 |                SUBT a                   
+030 2135 |                STORE a                  
+031 9054 |                JUMP neg                 
+         |                                        
+032 113A |  posi          LOAD cero                
+033 213C |                STORE ac                 
+034 1135 |  while_ac      LOAD a                   
+035 8800 |                SKIPCOND 800             
+036 903E |                JUMP endwhile_ac         
+037 1135 |                LOAD a                   
+038 413B |                SUBT uno                 
+039 2135 |                STORE a                  
+03A 113C |                LOAD ac                  
+03B 3137 |                ADD c                    
+03C 213C |                STORE ac                 
+03D 9034 |                JUMP while_ac            
+03E 9065 |  endwhile_ac   JUMP sig2                
+         |                                        
+03F 113A |  ambos         LOAD cero                
+040 213C |                STORE ac                 
+041 1135 |                LOAD a                   
+042 4135 |                SUBT a                   
+043 4135 |                SUBT a                   
+044 2135 |                STORE a                  
+045 1137 |                LOAD c                   
+046 4137 |                SUBT c                   
+047 4137 |                SUBT c                   
+048 2137 |                STORE c                  
+049 1135 |  while_-a-c    LOAD a                   
+04A 8800 |                SKIPCOND 800             
+04B 9053 |                JUMP endwhile_-a-c       
+04C 1135 |                LOAD a                   
+04D 413B |                SUBT uno                 
+04E 2135 |                STORE a                  
+04F 113C |                LOAD ac                  
+050 3137 |                ADD c                    
+051 213C |                STORE ac                 
+052 9049 |                JUMP while_-a-c          
+053 9065 |  endwhile_-a-c JUMP sig2                
+         |                                        
+054 113A |  neg           LOAD cero                
+055 213C |                STORE ac                 
+056 1135 |  while_-ac     LOAD a                   
+057 8800 |                SKIPCOND 800             
+058 9060 |                JUMP endwhile_-ac        
+059 1135 |                LOAD a                   
+05A 413B |                SUBT uno                 
+05B 2135 |                STORE a                  
+05C 113C |                LOAD ac                  
+05D 3137 |                ADD c                    
+05E 213C |                STORE ac                 
+05F 9056 |                JUMP while_-ac           
+060 113C |  endwhile_-ac  LOAD ac                  
+061 413C |                SUBT ac                  
+062 413C |                SUBT ac                  
+063 213C |                STORE ac                 
+064 9065 |                JUMP sig2                
+         |                                        
+065 113A |  sig2          LOAD cero                
+066 213D |                STORE FOURac             
+067 113C |                LOAD ac                  
+068 313C |                ADD ac                   
+069 313C |                ADD ac                   
+06A 313C |                ADD ac                   
+06B 213D |                STORE FOURac             
+         |                                        
+06C 113D |                LOAD FOURac              
+06D 4138 |                SUBT bb                  
+06E 8800 |                SKIPCOND 800             
+06F 9071 |                JUMP posible             
+070 9077 |                JUMP imposible           
+         |                                        
+071 1138 |  posible       LOAD bb                  
+072 413D |                SUBT FOURac              
+073 8800 |                SKIPCOND 800             
+074 907A |                JUMP raiz_cero           
+075 2133 |                STORE raiz               
+076 90B5 |                JUMP empezar             
+         |                                        
+077 113E |  imposible     LOAD imp                 
+078 6000 |                OUTPUT                   
+079 9132 |                JUMP exit                
+         |                                        
+07A 113F |  raiz_cero     LOAD MENOSb              
+07B 8800 |                SKIPCOND 800             
+07C 9097 |                JUMP raiz_cero-          
+07D 2142 |                STORE div_x              
+07E 1140 |                LOAD DOSa                
+07F 8800 |                SKIPCOND 800             
+080 9087 |                JUMP raiz_cero_-a        
+081 2143 |                STORE div_y              
+082 0164 |                JNS div                  
+083 2141 |                STORE res_final          
+084 1141 |                LOAD res_final           
+085 6000 |                OUTPUT                   
+086 9132 |                JUMP exit                
+         |                                        
+087 113F |  raiz_cero_-a  LOAD MENOSb              
+088 2142 |                STORE div_x              
+089 1140 |                LOAD DOSa                
+08A 4140 |                SUBT DOSa                
+08B 4140 |                SUBT DOSa                
+08C 2140 |                STORE DOSa               
+08D 1140 |                LOAD DOSa                
+08E 2143 |                STORE div_y              
+08F 0164 |                JNS div                  
+090 2141 |                STORE res_final          
+091 1141 |                LOAD res_final           
+092 4141 |                SUBT res_final           
+093 4141 |                SUBT res_final           
+094 2141 |                STORE res_final          
+095 6000 |                OUTPUT                   
+096 9132 |                JUMP exit                
+         |                                        
+097 113F |  raiz_cero-    LOAD MENOSb              
+098 413F |                SUBT MENOSb              
+099 413F |                SUBT MENOSb              
+09A 213F |                STORE MENOSb             
+09B 113F |                LOAD MENOSb              
+09C 2142 |                STORE div_x              
+09D 1140 |                LOAD DOSa                
+09E 8800 |                SKIPCOND 800             
+09F 90A9 |                JUMP raiz_cero--         
+0A0 2143 |                STORE div_y              
+0A1 0164 |                JNS div                  
+0A2 2141 |                STORE res_final          
+0A3 1141 |                LOAD res_final           
+0A4 4141 |                SUBT res_final           
+0A5 4141 |                SUBT res_final           
+0A6 2141 |                STORE res_final          
+0A7 6000 |                OUTPUT                   
+0A8 9132 |                JUMP exit                
+         |                                        
+0A9 113F |  raiz_cero--   LOAD MENOSb              
+0AA 2142 |                STORE div_x              
+0AB 1140 |                LOAD DOSa                
+0AC 4140 |                SUBT DOSa                
+0AD 4140 |                SUBT DOSa                
+0AE 2140 |                STORE DOSa               
+0AF 1140 |                LOAD DOSa                
+0B0 2143 |                STORE div_y              
+0B1 0164 |                JNS div                  
+0B2 2141 |                STORE res_final          
+0B3 6000 |                OUTPUT                   
+0B4 9132 |                JUMP exit                
+         |                                        
+0B5 0147 |  empezar       JNS babil                
+0B6 2134 |                STORE res_raiz           
+0B7 113F |                LOAD MENOSb              
+0B8 3134 |                ADD res_raiz             
+0B9 2146 |                STORE parte_arriba       
+0BA 1146 |                LOAD parte_arriba        
+0BB 8800 |                SKIPCOND 800             
+0BC 9104 |                JUMP arriba-             
+0BD 2142 |                STORE div_x              
+0BE 1140 |                LOAD DOSa                
+0BF 8800 |                SKIPCOND 800             
+0C0 9116 |                JUMP abajo-              
+0C1 2143 |                STORE div_y              
+0C2 0164 |                JNS div                  
+0C3 2141 |                STORE res_final          
+0C4 1141 |                LOAD res_final           
+0C5 6000 |                OUTPUT                   
+         |                                        
+0C6 113F |  res2          LOAD MENOSb              
+0C7 4134 |                SUBT res_raiz            
+0C8 2146 |                STORE parte_arriba       
+0C9 1146 |                LOAD parte_arriba        
+0CA 8800 |                SKIPCOND 800             
+0CB 90D6 |                JUMP arriba2-            
+0CC 2142 |                STORE div_x              
+0CD 1140 |                LOAD DOSa                
+0CE 8800 |                SKIPCOND 800             
+0CF 90E8 |                JUMP abajo2-             
+0D0 2143 |                STORE div_y              
+0D1 0164 |                JNS div                  
+0D2 2141 |                STORE res_final          
+0D3 1141 |                LOAD res_final           
+0D4 6000 |                OUTPUT                   
+0D5 9132 |                JUMP exit                
+         |                                        
+0D6 1146 |  arriba2-      LOAD parte_arriba        
+0D7 4146 |                SUBT parte_arriba        
+0D8 4146 |                SUBT parte_arriba        
+0D9 2146 |                STORE parte_arriba       
+0DA 1146 |                LOAD parte_arriba        
+0DB 2142 |                STORE div_x              
+0DC 1140 |                LOAD DOSa                
+0DD 8800 |                SKIPCOND 800             
+0DE 90F8 |                JUMP ambos2-             
+0DF 2143 |                STORE div_y              
+0E0 0164 |                JNS div                  
+0E1 2141 |                STORE res_final          
+0E2 1141 |                LOAD res_final           
+0E3 4141 |                SUBT res_final           
+0E4 4141 |                SUBT res_final           
+0E5 2141 |                STORE res_final          
+0E6 6000 |                OUTPUT                   
+0E7 9132 |                JUMP exit                
+         |                                        
+0E8 1146 |  abajo2-       LOAD parte_arriba        
+0E9 2142 |                STORE div_x              
+0EA 1140 |                LOAD DOSa                
+0EB 4140 |                SUBT DOSa                
+0EC 4140 |                SUBT DOSa                
+0ED 2140 |                STORE DOSa               
+0EE 1140 |                LOAD DOSa                
+0EF 2143 |                STORE div_y              
+0F0 0164 |                JNS div                  
+0F1 2141 |                STORE res_final          
+0F2 1141 |                LOAD res_final           
+0F3 4141 |                SUBT res_final           
+0F4 4141 |                SUBT res_final           
+0F5 2141 |                STORE res_final          
+0F6 6000 |                OUTPUT                   
+0F7 9132 |                JUMP exit                
+         |                                        
+0F8 1146 |  ambos2-       LOAD parte_arriba        
+0F9 2142 |                STORE div_x              
+0FA 1140 |                LOAD DOSa                
+0FB 4140 |                SUBT DOSa                
+0FC 4140 |                SUBT DOSa                
+0FD 2140 |                STORE DOSa               
+0FE 1140 |                LOAD DOSa                
+0FF 2143 |                STORE div_y              
+100 0164 |                JNS div                  
+101 2141 |                STORE res_final          
+102 6000 |                OUTPUT                   
+103 9132 |                JUMP exit                
+         |                                        
+104 1146 |  arriba-       LOAD parte_arriba        
+105 4146 |                SUBT parte_arriba        
+106 4146 |                SUBT parte_arriba        
+107 2146 |                STORE parte_arriba       
+108 1146 |                LOAD parte_arriba        
+109 2142 |                STORE div_x              
+10A 1140 |                LOAD DOSa                
+10B 8800 |                SKIPCOND 800             
+10C 9126 |                JUMP ambos-              
+10D 2143 |                STORE div_y              
+10E 0164 |                JNS div                  
+10F 2141 |                STORE res_final          
+110 1141 |                LOAD res_final           
+111 4141 |                SUBT res_final           
+112 4141 |                SUBT res_final           
+113 2141 |                STORE res_final          
+114 6000 |                OUTPUT                   
+115 90C6 |                JUMP res2                
+         |                                        
+116 1146 |  abajo-        LOAD parte_arriba        
+117 2142 |                STORE div_x              
+118 1140 |                LOAD DOSa                
+119 4140 |                SUBT DOSa                
+11A 4140 |                SUBT DOSa                
+11B 2140 |                STORE DOSa               
+11C 1140 |                LOAD DOSa                
+11D 2143 |                STORE div_y              
+11E 0164 |                JNS div                  
+11F 2141 |                STORE res_final          
+120 1141 |                LOAD res_final           
+121 4141 |                SUBT res_final           
+122 4141 |                SUBT res_final           
+123 2141 |                STORE res_final          
+124 6000 |                OUTPUT                   
+125 90C6 |                JUMP res2                
+         |                                        
+126 1146 |  ambos-        LOAD parte_arriba        
+127 2142 |                STORE div_x              
+128 1140 |                LOAD DOSa                
+129 4140 |                SUBT DOSa                
+12A 4140 |                SUBT DOSa                
+12B 2140 |                STORE DOSa               
+12C 1140 |                LOAD DOSa                
+12D 2143 |                STORE div_y              
+12E 0164 |                JNS div                  
+12F 2141 |                STORE res_final          
+130 6000 |                OUTPUT                   
+131 90C6 |                JUMP res2                
+         |                                        
+132 7000 |  exit          HALT                     
+133 0000 |  raiz          DEC 0                    
+134 0000 |  res_raiz      DEC 0                    
+135 0000 |  a             DEC 0                    
+136 0000 |  b             DEC 0                    
+137 0000 |  c             DEC 0                    
+138 0000 |  bb            DEC 0                    
+139 0000 |  b1            DEC 0                    
+13A 0000 |  cero          DEC 0                    
+13B 0001 |  uno           DEC 1                    
+13C 0000 |  ac            DEC 0                    
+13D 0000 |  FOURac        DEC 0                    
+13E FFFF |  imp           DEC -1                   
+13F 0000 |  MENOSb        DEC 0                    
+140 0000 |  DOSa          DEC 0                    
+141 0000 |  res_final     DEC 0                    
+142 0000 |  div_x         DEC 0                    
+143 0000 |  div_y         DEC 0                    
+144 0002 |  dos           DEC 2                    
+145 0000 |  div_i         DEC 0                    
+146 0000 |  parte_arriba  DEC 0                    
+         |                                        
+         |                                        
+147 0000 |  babil         DEC 0                    
+148 1133 |                LOAD raiz                
+149 2142 |                STORE div_x              
+14A 1144 |                LOAD dos                 
+14B 2143 |                STORE div_y              
+14C 0164 |                JNS div                  
+14D 2162 |                STORE div_lado1          
+14E 1144 |                LOAD dos                 
+14F 2163 |                STORE div_lado2          
+150 1162 |  while_raiz    LOAD div_lado1           
+151 4163 |                SUBT div_lado2           
+152 8800 |                SKIPCOND 800             
+153 9160 |                JUMP endwhile_raiz       
+154 1162 |                LOAD div_lado1           
+155 3163 |                ADD div_lado2            
+156 2184 |                STORE avg_x              
+157 017B |                JNS avg                  
+158 2162 |                STORE div_lado1          
+159 1133 |                LOAD raiz                
+15A 2142 |                STORE div_x              
+15B 1162 |                LOAD div_lado1           
+15C 2143 |                STORE div_y              
+15D 0164 |                JNS div                  
+15E 2163 |                STORE div_lado2          
+15F 9150 |                JUMP while_raiz          
+160 1163 |  endwhile_raiz LOAD div_lado2           
+161 C147 |                JUMPI babil              
+162 0000 |  div_lado1     DEC 0                    
+163 0000 |  div_lado2     DEC 0                    
+         |                                        
+         |                                        
+         |                                        
+164 0000 |  div           DEC 0                    
+165 A000 |                CLEAR                    
+166 2145 |                STORE div_i              
+167 1142 |                LOAD div_x               
+168 4143 |  while         SUBT div_y               
+169 8800 |                SKIPCOND 800             
+16A 9171 |                JUMP endwhile            
+16B 2142 |                STORE div_x              
+16C 1145 |                LOAD div_i               
+16D 313B |                ADD uno                  
+16E 2145 |                STORE div_i              
+16F 1142 |                LOAD div_x               
+170 9168 |                JUMP while               
+171 1142 |  endwhile      LOAD div_x               
+172 413B |                SUBT uno                 
+173 8400 |                SKIPCOND 400             
+174 9177 |                JUMP par                 
+175 1145 |                LOAD div_i               
+176 C164 |                JUMPI div                
+177 1145 |  par           LOAD div_i               
+178 313B |                ADD uno                  
+179 2145 |                STORE div_i              
+17A C164 |                JUMPI div                
+         |                                        
+17B 0000 |  avg           DEC 0                    
+17C 1184 |                LOAD avg_x               
+17D 2142 |                STORE div_x              
+17E 1144 |                LOAD dos                 
+17F 2143 |                STORE div_y              
+180 0164 |                JNS div                  
+181 2185 |                STORE res_avg            
+182 1185 |                LOAD res_avg             
+183 C17B |                JUMPI avg                
+184 0000 |  avg_x         DEC 0                    
+185 0000 |  res_avg       DEC 0                    
+
+Assembly successful.
+
+         SYMBOL TABLE
+         ---------------------------------------------------------
+          Symbol        | Defined | References 
+         ---------------+---------+-------------------------------
+          DOSa          |   140   | 010, 07E, 089, 08A, 08B, 08C, 
+                        |         | 08D, 09D, 0AB, 0AC, 0AD, 0AE, 
+                        |         | 0AF, 0BE, 0CD, 0DC, 0EA, 0EB, 
+                        |         | 0EC, 0ED, 0EE, 0FA, 0FB, 0FC, 
+                        |         | 0FD, 0FE, 10A, 118, 119, 11A, 
+                        |         | 11B, 11C, 128, 129, 12A, 12B, 
+                        |         | 12C
+          FOURac        |   13D   | 066, 06B, 06C, 072
+          MENOSb        |   13F   | 00D, 07A, 087, 097, 098, 099, 
+                        |         | 09A, 09B, 0A9, 0B7, 0C6
+          a             |   135   | 001, 006, 00E, 00F, 027, 02D, 
+                        |         | 02E, 02F, 030, 034, 037, 039, 
+                        |         | 041, 042, 043, 044, 049, 04C, 
+                        |         | 04E, 056, 059, 05B
+          abajo-        |   116   | 0C0
+          abajo2-       |   0E8   | 0CF
+          ac            |   13C   | 033, 03A, 03C, 040, 04F, 051, 
+                        |         | 055, 05C, 05E, 060, 061, 062, 
+                        |         | 063, 067, 068, 069, 06A
+          ambos         |   03F   | 02C
+          ambos-        |   126   | 10C
+          ambos2-       |   0F8   | 0DE
+          arriba-       |   104   | 0BC
+          arriba2-      |   0D6   | 0CB
+          avg           |   17B   | 157, 183
+          avg_x         |   184   | 156, 17C
+          b             |   136   | 003, 00A, 00B, 00C, 011, 014, 
+                        |         | 015, 016, 017, 01A, 01C, 022, 
+                        |         | 024
+          b1            |   139   | 01B, 020
+          babil         |   147   | 0B5, 161
+          bb            |   138   | 019, 01F, 021, 06D, 071
+          c             |   137   | 005, 02A, 03B, 045, 046, 047, 
+                        |         | 048, 050, 05D
+          cero          |   13A   | 018, 032, 03F, 054, 065
+          cuadrado      |   018   | 013
+          div           |   164   | 082, 08F, 0A1, 0B1, 0C2, 0D1, 
+                        |         | 0E0, 0F0, 100, 10E, 11E, 12E, 
+                        |         | 14C, 15D, 176, 17A, 180
+          div_i         |   145   | 166, 16C, 16E, 175, 177, 179
+          div_lado1     |   162   | 14D, 150, 154, 158, 15B
+          div_lado2     |   163   | 14F, 151, 155, 15E, 160
+          div_x         |   142   | 07D, 088, 09C, 0AA, 0BD, 0CC, 
+                        |         | 0DB, 0E9, 0F9, 109, 117, 127, 
+                        |         | 149, 15A, 167, 16B, 16F, 171, 
+                        |         | 17D
+          div_y         |   143   | 081, 08E, 0A0, 0B0, 0C1, 0D0, 
+                        |         | 0DF, 0EF, 0FF, 10D, 11D, 12D, 
+                        |         | 14B, 15C, 168, 17F
+          dos           |   144   | 14A, 14E, 17E
+          empezar       |   0B5   | 076
+          endwhile      |   171   | 16A
+          endwhile_-a-c |   053   | 04B
+          endwhile_-ac  |   060   | 058
+          endwhile_ac   |   03E   | 036
+          endwhile_bb   |   026   | 01E
+          endwhile_raiz |   160   | 153
+          exit          |   132   | 079, 086, 096, 0A8, 0B4, 0D5, 
+                        |         | 0E7, 0F7, 103
+          imp           |   13E   | 077
+          imposible     |   077   | 009, 070
+          neg           |   054   | 031
+          nn            |   00A   | 008
+          par           |   177   | 174
+          parte_arriba  |   146   | 0B9, 0BA, 0C8, 0C9, 0D6, 0D7, 
+                        |         | 0D8, 0D9, 0DA, 0E8, 0F8, 104, 
+                        |         | 105, 106, 107, 108, 116, 126
+          posi          |   032   | 029
+          posible       |   071   | 06F
+          raiz          |   133   | 075, 148, 159
+          raiz_cero     |   07A   | 074
+          raiz_cero-    |   097   | 07C
+          raiz_cero--   |   0A9   | 09F
+          raiz_cero_-a  |   087   | 080
+          res2          |   0C6   | 115, 125, 131
+          res_avg       |   185   | 181, 182
+          res_final     |   141   | 083, 084, 090, 091, 092, 093, 
+                        |         | 094, 0A2, 0A3, 0A4, 0A5, 0A6, 
+                        |         | 0B2, 0C3, 0C4, 0D2, 0D3, 0E1, 
+                        |         | 0E2, 0E3, 0E4, 0E5, 0F1, 0F2, 
+                        |         | 0F3, 0F4, 0F5, 101, 10F, 110, 
+                        |         | 111, 112, 113, 11F, 120, 121, 
+                        |         | 122, 123, 12F
+          res_raiz      |   134   | 0B6, 0B8, 0C7
+          sig           |   027   | 026
+          sig2          |   065   | 03E, 053, 064
+          uno           |   13B   | 023, 038, 04D, 05A, 16D, 172, 
+                        |         | 178
+          while         |   168   | 170
+          while_-a-c    |   049   | 052
+          while_-ac     |   056   | 05F
+          while_ac      |   034   | 03D
+          while_bb      |   01C   | 025
+          while_raiz    |   150   | 15F
+         ---------------------------------------------------------
+
+

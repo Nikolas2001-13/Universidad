@@ -1,0 +1,18 @@
+ -------------------
+ Symbol   | Location
+ ---------+---------
+ A        |   02C
+ B        |   02D
+ C        |   02E
+ Z        |   02F
+ div      |   015
+ div_AB   |   030
+ div_C    |   031
+ div_res  |   034
+ div_x    |   032
+ div_y    |   033
+ endwhile |   022
+ par      |   028
+ uno      |   035
+ while    |   019
+

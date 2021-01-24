@@ -1,0 +1,93 @@
+     Assembly listing for: q2.mas
+                Assembled: Thu Oct 10 17:09:06 COT 2019
+
+000 5000 |           INPUT               
+001 2030 |           STORE a             
+002 5000 |           INPUT               
+003 2031 |           STORE b             
+004 5000 |           INPUT               
+005 2032 |           STORE c             
+         |                              
+006 1030 |           LOAD a              
+007 2037 |           STORE div_x         
+008 0019 |           JNS div             
+009 2034 |           STORE div_a         
+00A 1031 |           LOAD b              
+00B 2037 |           STORE div_x         
+00C 0019 |           JNS div             
+00D 2035 |           STORE div_b         
+00E 1032 |           LOAD c              
+00F 2037 |           STORE div_x         
+010 0019 |           JNS div             
+011 2036 |           STORE div_c         
+012 1033 |           LOAD z              
+013 3034 |           ADD div_a           
+014 3035 |           ADD div_b           
+015 3036 |           ADD div_c           
+016 2033 |           STORE z             
+017 6000 |           OUTPUT              
+018 7000 |           HALT                
+         |                              
+019 0000 |  div      DEC 0               
+01A A000 |           CLEAR               
+01B 2039 |           STORE div_res       
+01C 1037 |           LOAD div_x          
+01D 4038 |  while    SUBT div_y          
+01E 8800 |           SKIPCOND 800        
+01F 9026 |           JUMP endwhile       
+020 2037 |           STORE div_x         
+021 1039 |           LOAD div_res        
+022 303A |           ADD uno             
+023 2039 |           STORE div_res       
+024 1037 |           LOAD div_x          
+025 901D |           JUMP while          
+         |                              
+026 1037 |  endwhile LOAD div_x          
+027 403A |           SUBT uno            
+028 8400 |           SKIPCOND 400        
+029 902C |           JUMP par            
+02A 1039 |           LOAD div_res        
+02B C019 |           JUMPI div           
+         |                              
+02C 1039 |  par      LOAD div_res        
+02D 303A |           ADD uno             
+02E 2039 |           STORE div_res       
+02F C019 |           JUMPI div           
+         |                              
+030 0000 |  a        DEC 0               
+031 0000 |  b        DEC 0               
+032 0000 |  c        DEC 0               
+033 0000 |  z        DEC 0               
+034 0000 |  div_a    DEC 0               
+035 0000 |  div_b    DEC 0               
+036 0000 |  div_c    DEC 0               
+037 0000 |  div_x    DEC 0               
+038 0002 |  div_y    DEC 2               
+039 0000 |  div_res  DEC 0               
+03A 0001 |  uno      DEC 1               
+
+Assembly successful.
+
+         SYMBOL TABLE
+         ----------------------------------------------------
+          Symbol   | Defined | References 
+         ----------+---------+-------------------------------
+          a        |   030   | 001, 006
+          b        |   031   | 003, 00A
+          c        |   032   | 005, 00E
+          div      |   019   | 008, 00C, 010, 02B, 02F
+          div_a    |   034   | 009, 013
+          div_b    |   035   | 00D, 014
+          div_c    |   036   | 011, 015
+          div_res  |   039   | 01B, 021, 023, 02A, 02C, 02E
+          div_x    |   037   | 007, 00B, 00F, 01C, 020, 024, 
+                   |         | 026
+          div_y    |   038   | 01D
+          endwhile |   026   | 01F
+          par      |   02C   | 029
+          uno      |   03A   | 022, 027, 02D
+          while    |   01D   | 025
+          z        |   033   | 012, 016
+         ----------------------------------------------------
+
+

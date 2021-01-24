@@ -1,0 +1,17 @@
+CHIP 3bits{
+	IN x,y,z;
+	OUT s;
+	
+	PARTS:
+	Or(a=x,b=y,out=xOry);
+	Or(a=xOry,b=z,out=xOryOrz);
+	
+	Not(in=x,out=notx);
+	Not(in=y,out=noty);
+	Not(in=z,out=notz);
+	
+	Or(a=notx,b=noty,out=notxOrnoty);
+	Or(a=notxOrnoty,b=notz,out=notxOrnotyOrnotz);
+	
+	And(a=xOryOrz,b=notxOrnotyOrnotz,out=s);
+}

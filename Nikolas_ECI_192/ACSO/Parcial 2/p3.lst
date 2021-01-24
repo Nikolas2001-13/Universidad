@@ -1,0 +1,44 @@
+     Assembly listing for: p3.mas
+                Assembled: Thu Oct 24 16:27:44 COT 2019
+
+000 5000 |         INPUT             
+001 2014 |         STORE A           
+002 5000 |         INPUT             
+003 2015 |         STORE B           
+004 5000 |         INPUT             
+005 2016 |         STORE C           
+         |                          
+006 1014 |         LOAD A            
+007 3014 |         ADD A             
+008 4015 |         SUBT B            
+009 4015 |         SUBT B            
+00A 4015 |         SUBT B            
+00B 4015 |         SUBT B            
+00C 4015 |         SUBT B            
+00D 4015 |         SUBT B            
+00E 3016 |         ADD C             
+00F 3016 |         ADD C             
+010 2017 |         STORE Z           
+011 1017 |         LOAD Z            
+012 6000 |         OUTPUT            
+         |                          
+013 7000 |         HALT              
+014 0000 |  A      DEC 0             
+015 0000 |  B      DEC 0             
+016 0000 |  C      DEC 0             
+017 0000 |  Z      DEC 0             
+
+Assembly successful.
+
+         SYMBOL TABLE
+         --------------------------------------------------
+          Symbol | Defined | References 
+         --------+---------+-------------------------------
+          A      |   014   | 001, 006, 007
+          B      |   015   | 003, 008, 009, 00A, 00B, 00C, 
+                 |         | 00D
+          C      |   016   | 005, 00E, 00F
+          Z      |   017   | 010, 011
+         --------------------------------------------------
+
+

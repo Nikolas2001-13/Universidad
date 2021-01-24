@@ -1,0 +1,422 @@
+input
+store a
+input
+store b
+input
+store c
+
+load a
+skipcond 400
+jump nn
+jump imposible
+
+nn, load b
+subt b
+subt b
+store MENOSb
+
+load a
+add a
+store DOSa
+
+load b
+skipcond 000
+jump cuadrado
+load b
+subt b
+subt b
+store b
+
+cuadrado, load cero
+store bb
+load b
+store b1
+while_bb, load b
+skipcond 800
+jump endwhile_bb
+load bb
+add b1
+store bb
+load b
+subt uno
+store b
+jump while_bb
+endwhile_bb, jump sig
+
+sig, load a
+skipcond 000
+jump posi
+load c
+skipcond 800
+jump ambos
+load a
+subt a
+subt a
+store a
+jump neg
+
+posi, load cero
+store ac
+while_ac, load a
+skipcond 800
+jump endwhile_ac
+load a
+subt uno
+store a
+load ac
+add c
+store ac
+jump while_ac
+endwhile_ac, jump sig2
+
+ambos, load cero
+store ac
+load a
+subt a
+subt a
+store a
+load c
+subt c
+subt c
+store c
+while_-a-c, load a
+skipcond 800
+jump endwhile_-a-c
+load a
+subt uno
+store a
+load ac
+add c
+store ac
+jump while_-a-c
+endwhile_-a-c, jump sig2
+
+neg, load cero
+store ac
+while_-ac, load a
+skipcond 800
+jump endwhile_-ac
+load a
+subt uno
+store a
+load ac
+add c
+store ac
+jump while_-ac
+endwhile_-ac, load ac
+subt ac
+subt ac
+store ac
+jump sig2
+
+sig2, load cero
+store FOURac
+load ac
+add ac
+add ac
+add ac
+store FOURac
+
+load FOURac
+subt bb
+skipcond 800
+jump posible
+jump imposible
+
+posible, load bb
+subt FOURac
+skipcond 800
+jump raiz_cero
+store raiz
+jump empezar
+
+imposible, load imp
+output
+jump exit
+
+raiz_cero, load MENOSb
+skipcond 800
+jump raiz_cero-
+store div_x
+load DOSa
+skipcond 800
+jump raiz_cero_-a
+store div_y
+jns div
+store res_final
+load res_final
+output
+jump exit
+
+raiz_cero_-a, load MENOSb
+store div_x
+load DOSa
+subt DOSa
+subt DOSa
+store DOSa
+load DOSa
+store div_y
+jns div
+store res_final
+load res_final
+subt res_final
+subt res_final
+store res_final
+output
+jump exit
+
+raiz_cero-, load MENOSb
+subt MENOSb
+subt MENOSb
+store MENOSb
+load MENOSb
+store div_x
+load DOSa
+skipcond 800
+jump raiz_cero--
+store div_y
+jns div
+store res_final
+load res_final
+subt res_final
+subt res_final
+store res_final
+output
+jump exit
+
+raiz_cero--, load MENOSb
+store div_x
+load DOSa
+subt DOSa
+subt DOSa
+store DOSa
+load DOSa
+store div_y
+jns div
+store res_final
+output
+jump exit
+
+empezar, jns babil
+store res_raiz
+load MENOSb
+add res_raiz
+store parte_arriba
+load parte_arriba
+skipcond 800
+jump arriba-
+store div_x
+load DOSa
+skipcond 800
+jump abajo-
+store div_y
+jns div
+store res_final
+load res_final
+output
+
+res2, load MENOSb
+subt res_raiz
+store parte_arriba
+load parte_arriba
+skipcond 800
+jump arriba2-
+store div_x
+load DOSa
+skipcond 800
+jump abajo2-
+store div_y
+jns div
+store res_final
+load res_final
+output
+jump exit
+
+arriba2-, load parte_arriba
+subt parte_arriba
+subt parte_arriba
+store parte_arriba
+load parte_arriba
+store div_x
+load DOSa
+skipcond 800
+jump ambos2-
+store div_y
+jns div
+store res_final
+load res_final
+subt res_final
+subt res_final
+store res_final
+output
+jump exit
+
+abajo2-, load parte_arriba
+store div_x
+load DOSa
+subt DOSa
+subt DOSa
+store DOSa
+load DOSa
+store div_y
+jns div
+store res_final
+load res_final
+subt res_final
+subt res_final
+store res_final
+output
+jump exit
+
+ambos2-, load parte_arriba
+store div_x
+load DOSa
+subt DOSa
+subt DOSa
+store DOSa
+load DOSa
+store div_y
+jns div
+store res_final
+output
+jump exit
+
+arriba-, load parte_arriba
+subt parte_arriba
+subt parte_arriba
+store parte_arriba
+load parte_arriba
+store div_x
+load DOSa
+skipcond 800
+jump ambos-
+store div_y
+jns div
+store res_final
+load res_final
+subt res_final
+subt res_final
+store res_final
+output
+jump res2
+
+abajo-, load parte_arriba
+store div_x
+load DOSa
+subt DOSa
+subt DOSa
+store DOSa
+load DOSa
+store div_y
+jns div
+store res_final
+load res_final
+subt res_final
+subt res_final
+store res_final
+output
+jump res2
+
+ambos-, load parte_arriba
+store div_x
+load DOSa
+subt DOSa
+subt DOSa
+store DOSa
+load DOSa
+store div_y
+jns div
+store res_final
+output
+jump res2
+
+exit, halt
+raiz, dec 0
+res_raiz, dec 0
+a, dec 0
+b, dec 0
+c, dec 0
+bb, dec 0
+b1, dec 0
+cero, dec 0
+uno, dec 1
+ac, dec 0
+FOURac, dec 0
+imp, dec -1
+MENOSb, dec 0
+DOSa, dec 0
+res_final, dec 0
+div_x, dec 0
+div_y, dec 0
+dos, dec 2
+div_i, dec 0
+parte_arriba, dec 0
+
+
+babil, dec 0
+load raiz
+store div_x
+load dos
+store div_y
+jns div
+store div_lado1
+load dos
+store div_lado2
+while_raiz, load div_lado1
+subt div_lado2
+skipcond 800
+jump endwhile_raiz
+load div_lado1
+add div_lado2
+store avg_x
+jns avg
+store div_lado1
+load raiz
+store div_x
+load div_lado1
+store div_y
+jns div
+store div_lado2
+jump while_raiz
+endwhile_raiz, load div_lado2
+jumpi babil
+div_lado1, dec 0
+div_lado2, dec 0
+
+
+
+div, dec 0
+clear
+store div_i
+load div_x
+while, subt div_y
+skipcond 800
+jump endwhile
+store div_x
+load div_i
+add uno
+store div_i
+load div_x
+jump while
+endwhile, load div_x
+subt uno
+skipcond 400
+jump par
+load div_i
+jumpi div
+par, load div_i
+add uno
+store div_i
+jumpi div
+
+avg, dec 0
+load avg_x
+store div_x
+load dos
+store div_y
+jns div
+store res_avg
+load res_avg
+jumpi avg
+avg_x, dec 0
+res_avg, dec 0

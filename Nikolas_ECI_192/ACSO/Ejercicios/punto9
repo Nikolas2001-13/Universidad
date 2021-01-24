@@ -1,0 +1,19 @@
+input 
+store x
+subt one
+skipcond 000
+jump endif
+load x
+subt ten
+skipcond 800
+jump endif
+load y
+add x
+add x
+store y
+output
+endif, halt
+x, dec 0
+one, dec 1
+ten, dec 10
+y, dec 0

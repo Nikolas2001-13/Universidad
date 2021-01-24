@@ -1,0 +1,84 @@
+input
+store raiz
+jns babil
+store res_raiz
+load res_raiz
+output
+halt
+raiz, dec 0
+res_raiz, dec 0
+
+
+babil, dec 0
+load raiz
+store div_x
+load dos
+store div_y
+jns div
+store div_lado1
+load dos
+store div_lado2
+while_raiz, load div_lado1
+subt div_lado2
+skipcond 800
+jump endwhile_raiz
+load div_lado1
+add div_lado2
+store avg_x
+jns avg
+store div_lado1
+load raiz
+store div_x
+load div_lado1
+store div_y
+jns div
+store div_lado2
+jump while_raiz
+endwhile_raiz, load div_lado2
+jumpi babil
+div_lado1, dec 0
+div_lado2, dec 0
+
+
+
+div, dec 0
+clear
+store div_i
+load div_x
+while, subt div_y
+skipcond 800
+jump endwhile
+store div_x
+load div_i
+add uno
+store div_i
+load div_x
+jump while
+endwhile, load div_x
+subt uno
+skipcond 400
+jump par
+load div_i
+jumpi div
+par, load div_i
+add uno
+store div_i
+jumpi div
+div_x, dec 0
+div_y, dec 0
+uno, dec 1
+dos, dec 2
+div_i, dec 0
+
+
+avg, dec 0
+load avg_x
+store div_x
+load dos
+store div_y
+jns div
+store res_avg
+load res_avg
+jumpi avg
+avg_x, dec 0
+res_avg, dec 0

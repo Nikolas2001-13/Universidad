@@ -1,0 +1,23 @@
+ --------------------
+ Symbol    | Location
+ ----------+---------
+ a         |   034
+ ax        |   03C
+ b         |   035
+ bx        |   037
+ c         |   036
+ cero      |   039
+ endwhile1 |   012
+ endwhile2 |   01F
+ endwhile3 |   02C
+ res       |   03A
+ sig       |   013
+ sig2      |   020
+ uno       |   038
+ while1    |   008
+ while2    |   015
+ while3    |   022
+ x         |   03D
+ x1        |   03E
+ xx        |   03B
+

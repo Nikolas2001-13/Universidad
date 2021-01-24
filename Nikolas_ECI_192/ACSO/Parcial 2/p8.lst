@@ -1,0 +1,40 @@
+     Assembly listing for: p8.mas
+                Assembled: Thu Oct 24 17:32:13 COT 2019
+
+000 1011 |         LOAD X            
+001 8800 |  while  SKIPCOND 800      
+002 9008 |         JUMP igual        
+003 1011 |         LOAD X            
+004 4012 |         SUBT uno          
+005 2011 |         STORE X           
+006 1011 |         LOAD X            
+007 9001 |         JUMP while        
+         |                          
+008 8400 |  igual  SKIPCOND 400      
+009 900E |         JUMP end          
+00A 1011 |         LOAD X            
+00B 4012 |         SUBT uno          
+00C 2011 |         STORE X           
+00D 900E |         JUMP end          
+         |                          
+00E 1011 |  end    LOAD X            
+00F 6000 |         OUTPUT            
+010 7000 |         HALT              
+011 000A |  X      DEC 10            
+012 0001 |  uno    DEC 1             
+
+Assembly successful.
+
+         SYMBOL TABLE
+         --------------------------------------------------
+          Symbol | Defined | References 
+         --------+---------+-------------------------------
+          X      |   011   | 000, 003, 005, 006, 00A, 00C, 
+                 |         | 00E
+          end    |   00E   | 009, 00D
+          igual  |   008   | 002
+          uno    |   012   | 004, 00B
+          while  |   001   | 007
+         --------------------------------------------------
+
+

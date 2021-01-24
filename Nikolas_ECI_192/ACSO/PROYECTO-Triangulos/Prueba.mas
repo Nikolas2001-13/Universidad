@@ -1,0 +1,371 @@
+input
+store x1
+input
+store y1
+input
+store x2
+input
+store y2
+input
+store x3
+input
+store y3
+
+load x1
+subt x2
+store d1
+load d1
+store k
+jns posi
+store d1+
+load y1
+subt y2
+store d2
+load d2
+store k
+jns posi
+store d2+
+
+load x1
+subt x3
+store d3
+load d3
+store k
+jns posi
+store d3+
+load y1
+subt y3
+store d4
+load d4
+store k
+jns posi
+store d4+
+
+load x2
+subt x3
+store d5
+load d5
+store k
+jns posi
+store d5+
+load y2
+subt y3
+store d6
+load d6
+store k
+jns posi
+store d6+
+
+load d1+
+store elevar1
+load d1+
+store elevar2
+jns cuadrado
+store d1+
+
+load d2+
+store elevar1
+load d2+
+store elevar2
+jns cuadrado
+store d2+
+
+load d3+
+store elevar1
+load d3+
+store elevar2
+jns cuadrado
+store d3+
+
+load d4+
+store elevar1
+load d4+
+store elevar2
+jns cuadrado
+store d4+
+
+load d5+
+store elevar1
+load d5+
+store elevar2
+jns cuadrado
+store d5+
+
+load d6+
+store elevar1
+load d6+
+store elevar2
+jns cuadrado
+store d6+
+
+load d1+
+add d2+
+store lado1
+load lado1
+store div_x
+load cien
+store div_y
+jns div
+store lado1
+
+load d3+
+add d4+
+store lado2
+load lado2
+store div_x
+load cien
+store div_y
+jns div
+store lado2
+
+load d5+
+add d6+
+store lado3
+load lado3
+store div_x
+load cien
+store div_y
+jns div
+store lado3
+
+load lado1
+store raiz
+jns babil
+store mirar_lado1
+
+load lado2
+store raiz
+jns babil
+store mirar_lado2
+
+load lado3
+store raiz
+jns babil
+store mirar_lado3
+
+load mirar_lado1
+add mirar_lado2
+subt mirar_lado3
+skipcond 000
+jump next
+jump NOtriangulo
+
+next, load mirar_lado2
+add mirar_lado3
+subt mirar_lado1
+skipcond 000
+jump next2
+jump NOtriangulo
+
+next2, load mirar_lado3
+add mirar_lado1
+subt mirar_lado2
+skipcond 000
+jump mayor_lado1
+jump NOtriangulo
+
+mayor_lado1, load lado1
+subt lado2
+skipcond 800
+jump mayor_lado2
+load lado1
+subt lado3
+skipcond 800
+jump mayor_lado3
+load lado1
+store c
+load lado2
+store a
+load lado3
+store b
+jump mirar_triangulos
+
+mayor_lado2, load lado2
+subt lado3
+skipcond 800
+jump mayor_lado3
+load lado2
+store c
+load lado1
+store a
+load lado3
+store b
+jump mirar_triangulos
+
+mayor_lado3, load lado3
+store c
+load lado1
+store a
+load lado2
+store b
+jump mirar_triangulos
+
+mirar_triangulos, load c
+subt a
+subt b
+add uno
+skipcond 400
+jump mirar2
+load tres
+output
+jump exit
+
+mirar2, load c
+subt a
+subt b
+skipcond 800
+jump ultimo
+load dos
+output
+jump exit
+
+ultimo, load uno
+output
+jump exit
+
+NOtriangulo, load MENOSuno
+output
+jump exit
+
+exit, halt
+x1, dec 0
+y1, dec 0
+x2, dec 0
+y2, dec 0
+x3, dec 0
+y3, dec 0
+d1, dec 0
+d2, dec 0
+d3, dec 0
+d4, dec 0
+d5, dec 0
+d6, dec 0
+d1+, dec 0
+d2+, dec 0
+d3+, dec 0
+d4+, dec 0
+d5+, dec 0
+d6+, dec 0
+k, dec 0
+abs, dec 0
+res_elevar, dec 0
+temp, dec 0
+elevar1, dec 0
+elevar2, dec 0
+lado1, dec 0
+lado2, dec 0
+lado3, dec 0
+raiz, dec 0
+MENOSuno, dec -1
+tres, dec 3
+res_final, dec 0
+cien, dec 100
+a, dec 0
+b, dec 0
+c, dec 0
+mirar_lado1, dec 0
+mirar_lado2, dec 0
+mirar_lado3, dec 0
+
+cuadrado, dec 0
+clear
+store res_elevar
+store temp
+while_cuadrado, subt elevar2
+skipcond 000
+jump endwhile_cuadrado
+load elevar1
+add res_elevar
+store res_elevar
+load temp
+add uno
+store temp
+jump while_cuadrado
+endwhile_cuadrado, load res_elevar
+jumpi cuadrado
+
+
+posi, dec 0
+clear
+store abs
+load k
+skipcond 000
+jumpi posi
+subt k
+subt k
+store abs
+jumpi posi
+
+
+babil, dec 0
+load raiz
+store div_x
+load dos
+store div_y
+jns div
+store div_lado1
+load dos
+store div_lado2
+while_raiz, load div_lado1
+subt div_lado2
+skipcond 800
+jump endwhile_raiz
+load div_lado1
+add div_lado2
+store avg_x
+jns avg
+store div_lado1
+load raiz
+store div_x
+load div_lado1
+store div_y
+jns div
+store div_lado2
+jump while_raiz
+endwhile_raiz, load div_lado2
+jumpi babil
+div_lado1, dec 0
+div_lado2, dec 0
+
+
+div, dec 0
+clear
+store div_i
+load div_x
+while, subt div_y
+skipcond 800
+jump endwhile
+store div_x
+load div_i
+add uno
+store div_i
+load div_x
+jump while
+endwhile, load div_x
+subt uno
+skipcond 400
+jump par
+load div_i
+jumpi div
+par, load div_i
+add uno
+store div_i
+jumpi div
+div_x, dec 0
+div_y, dec 0
+uno, dec 1
+dos, dec 2
+div_i, dec 0
+
+
+avg, dec 0
+load avg_x
+store div_x
+load dos
+store div_y
+jns div
+store res_avg
+load res_avg
+jumpi avg
+avg_x, dec 0
+res_avg, dec 0

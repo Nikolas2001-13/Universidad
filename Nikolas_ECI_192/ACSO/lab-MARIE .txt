@@ -1,0 +1,67 @@
+input
+store a
+input
+store b
+input
+store c
+
+load cero
+store bx
+while1, load b
+skipcond 800
+jump endwhile1
+load b
+subt uno
+store b
+load bx
+add x
+store bx
+jump while1
+endwhile1, jump sig
+
+sig, load cero
+store xx
+while2, load x
+skipcond 800
+jump endwhile2
+load xx
+add x1
+store xx
+load x
+subt uno
+store x
+jump while2
+endwhile2, jump sig2
+
+sig2, load cero
+store ax
+while3, load a
+skipcond 800
+jump endwhile3
+load ax
+add xx
+store ax
+load a
+subt uno
+store a
+jump while3
+endwhile3, load res
+add ax
+add bx
+add c
+store res
+load res
+output
+
+halt
+a, dec 0
+b, dec 0
+c, dec 0
+bx, dec 0
+uno, dec 1
+cero, dec 0
+res, dec 0
+xx, dec 0
+ax, dec 0
+x, dec 2
+x1, dec 2

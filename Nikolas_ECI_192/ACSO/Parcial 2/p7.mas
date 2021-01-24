@@ -1,0 +1,22 @@
+input
+store X
+
+load X
+subt uno
+skipcond 000
+jump end
+subt 10
+skipcond 800
+jump end
+load Y
+add X
+add X
+store Y
+load Y
+output
+
+end, halt
+X, dec 0
+Y, dec 0
+uno, dec 1
+diez, dec 10

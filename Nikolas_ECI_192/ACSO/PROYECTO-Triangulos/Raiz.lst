@@ -1,0 +1,117 @@
+     Assembly listing for: Raiz.mas
+                Assembled: Sun Nov 17 13:48:38 COT 2019
+
+000 5000 |                INPUT                    
+001 2007 |                STORE raiz               
+002 0009 |                JNS babil                
+003 2008 |                STORE res_raiz           
+004 1008 |                LOAD res_raiz            
+005 6000 |                OUTPUT                   
+006 7000 |                HALT                     
+007 0000 |  raiz          DEC 0                    
+008 0000 |  res_raiz      DEC 0                    
+         |                                        
+         |                                        
+009 0000 |  babil         DEC 0                    
+00A 1007 |                LOAD raiz                
+00B 203D |                STORE div_x              
+00C 1040 |                LOAD dos                 
+00D 203E |                STORE div_y              
+00E 0026 |                JNS div                  
+00F 2024 |                STORE div_lado1          
+010 1040 |                LOAD dos                 
+011 2025 |                STORE div_lado2          
+012 1024 |  while_raiz    LOAD div_lado1           
+013 4025 |                SUBT div_lado2           
+014 8800 |                SKIPCOND 800             
+015 9022 |                JUMP endwhile_raiz       
+016 1024 |                LOAD div_lado1           
+017 3025 |                ADD div_lado2            
+018 204B |                STORE avg_x              
+019 0042 |                JNS avg                  
+01A 2024 |                STORE div_lado1          
+01B 1007 |                LOAD raiz                
+01C 203D |                STORE div_x              
+01D 1024 |                LOAD div_lado1           
+01E 203E |                STORE div_y              
+01F 0026 |                JNS div                  
+020 2025 |                STORE div_lado2          
+021 9012 |                JUMP while_raiz          
+022 1025 |  endwhile_raiz LOAD div_lado2           
+023 C009 |                JUMPI babil              
+024 0000 |  div_lado1     DEC 0                    
+025 0000 |  div_lado2     DEC 0                    
+         |                                        
+         |                                        
+         |                                        
+026 0000 |  div           DEC 0                    
+027 A000 |                CLEAR                    
+028 2041 |                STORE div_i              
+029 103D |                LOAD div_x               
+02A 403E |  while         SUBT div_y               
+02B 8800 |                SKIPCOND 800             
+02C 9033 |                JUMP endwhile            
+02D 203D |                STORE div_x              
+02E 1041 |                LOAD div_i               
+02F 303F |                ADD uno                  
+030 2041 |                STORE div_i              
+031 103D |                LOAD div_x               
+032 902A |                JUMP while               
+033 103D |  endwhile      LOAD div_x               
+034 403F |                SUBT uno                 
+035 8400 |                SKIPCOND 400             
+036 9039 |                JUMP par                 
+037 1041 |                LOAD div_i               
+038 C026 |                JUMPI div                
+039 1041 |  par           LOAD div_i               
+03A 303F |                ADD uno                  
+03B 2041 |                STORE div_i              
+03C C026 |                JUMPI div                
+03D 0000 |  div_x         DEC 0                    
+03E 0000 |  div_y         DEC 0                    
+03F 0001 |  uno           DEC 1                    
+040 0002 |  dos           DEC 2                    
+041 0000 |  div_i         DEC 0                    
+         |                                        
+         |                                        
+042 0000 |  avg           DEC 0                    
+043 104B |                LOAD avg_x               
+044 203D |                STORE div_x              
+045 1040 |                LOAD dos                 
+046 203E |                STORE div_y              
+047 0026 |                JNS div                  
+048 204C |                STORE res_avg            
+049 104C |                LOAD res_avg             
+04A C042 |                JUMPI avg                
+04B 0000 |  avg_x         DEC 0                    
+04C 0000 |  res_avg       DEC 0                    
+
+Assembly successful.
+
+         SYMBOL TABLE
+         ---------------------------------------------------------
+          Symbol        | Defined | References 
+         ---------------+---------+-------------------------------
+          avg           |   042   | 019, 04A
+          avg_x         |   04B   | 018, 043
+          babil         |   009   | 002, 023
+          div           |   026   | 00E, 01F, 038, 03C, 047
+          div_i         |   041   | 028, 02E, 030, 037, 039, 03B
+          div_lado1     |   024   | 00F, 012, 016, 01A, 01D
+          div_lado2     |   025   | 011, 013, 017, 020, 022
+          div_x         |   03D   | 00B, 01C, 029, 02D, 031, 033, 
+                        |         | 044
+          div_y         |   03E   | 00D, 01E, 02A, 046
+          dos           |   040   | 00C, 010, 045
+          endwhile      |   033   | 02C
+          endwhile_raiz |   022   | 015
+          par           |   039   | 036
+          raiz          |   007   | 001, 00A, 01B
+          res_avg       |   04C   | 048, 049
+          res_raiz      |   008   | 003, 004
+          uno           |   03F   | 02F, 034, 03A
+          while         |   02A   | 032
+          while_raiz    |   012   | 021
+         ---------------------------------------------------------
+
+
